@@ -1,363 +1,577 @@
 ﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>THE LOFT | Creative Management & Editorial Strategy</title>
-   <script src="https://cdn.tailwindcss.com"></script>
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-   <style>
-       :root {
-           --bg-cream: #F9F7F2;
-           --text-dark: #1A1A1A;
-           --accent-gray: #7A7A7A;
-       }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Influence House | Creative Management & Editorial Strategy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-cream: #F9F7F2;
+            --text-dark: #1A1A1A;
+            --accent-gray: #7A7A7A;
+        }
 
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
 
-       body {
-           font-family: 'Inter', sans-serif;
-           background-color: var(--bg-cream);
-           color: var(--text-dark);
-           overflow-x: hidden;
-       }
+        .serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
 
+        .branding-font {
+            font-family: 'Bodoni Moda', serif;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
 
-       .serif {
-           font-family: 'Cormorant Garamond', serif;
-       }
+        .nav-link {
+            position: relative;
+            transition: opacity 0.3s ease;
+        }
 
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--text-dark);
+            transition: width 0.3s ease;
+        }
 
-       .nav-link {
-           position: relative;
-           transition: opacity 0.3s ease;
-       }
+        .nav-link:hover::after {
+            width: 100%;
+        }
 
+        .image-container img {
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-       .nav-link::after {
-           content: '';
-           position: absolute;
-           width: 0;
-           height: 1px;
-           bottom: -2px;
-           left: 0;
-           background-color: var(--text-dark);
-           transition: width 0.3s ease;
-       }
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
 
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
 
-       .nav-link:hover::after {
-           width: 100%;
-       }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
+        /* Custom scrollbar for premium feel */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
 
-       .image-container img {
-           transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-       }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-cream);
+        }
 
-
-       .image-container:hover img {
-           transform: scale(1.05);
-       }
-
-
-       .fade-in {
-           opacity: 0;
-           transform: translateY(20px);
-           transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-       }
-
-
-       .fade-in.visible {
-           opacity: 1;
-           transform: translateY(0);
-       }
-
-
-       /* Custom scrollbar for premium feel */
-       ::-webkit-scrollbar {
-           width: 6px;
-       }
-       ::-webkit-scrollbar-track {
-           background: var(--bg-cream);
-       }
-       ::-webkit-scrollbar-thumb {
-           background: #D1CEC5;
-       }
-   </style>
+        ::-webkit-scrollbar-thumb {
+            background: #D1CEC5;
+        }
+    </style>
 </head>
+
 <body class="antialiased">
 
+    <!-- Navigation -->
+    <header class="w-full bg-transparent px-6 md:px-12 py-12">
+        <div
+            class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1.5fr] lg:grid-cols-[2fr_auto_2fr] gap-8 items-center">
+            <!-- Left: Nav Links -->
+            <nav
+                class="flex flex-wrap gap-x-6 gap-y-2 text-[11px] uppercase tracking-[0.2em] font-medium text-zinc-500 whitespace-nowrap">
+                <a href="index.html" class="hover:text-black transition-colors">○ Home</a>
+                <a href="services.html" class="hover:text-black transition-colors">○ Services</a>
+            </nav>
 
-   <!-- Navigation -->
-   <nav id="navbar" class="fixed top-0 w-full z-50 px-6 md:px-12 py-6 flex justify-between items-center transition-all duration-500">
-       <div class="hidden md:flex space-x-8 text-[10px] uppercase tracking-[0.2em] font-medium">
-           <a href="#services" class="nav-link">Services</a>
-           <a href="#portfolio" class="nav-link">Portfolio</a>
-       </div>
+            <!-- Center: Logo & Tagline -->
+            <div class="text-center min-w-max">
+                <h1 class="branding-font text-2xl md:text-3xl tracking-[0.02em] font-medium uppercase mb-1">Real
+                    Influence
+                    House</h1>
+                <p class="text-[10px] tracking-[0.1em] text-zinc-400 uppercase">Fashion Marketing Agency — Montreal &
+                    NYC</p>
+            </div>
 
+            <!-- Right: Inquire Button -->
+            <div class="flex justify-end">
+                <a href="contact.html"
+                    class="bg-black text-white px-10 py-4 rounded-full text-[10px] uppercase tracking-[0.2em] hover:bg-zinc-800 transition-colors">Inquire</a>
+            </div>
+        </div>
+    </header>
 
-       <div class="text-2xl md:text-3xl tracking-[0.1em] font-light serif uppercase text-center cursor-pointer">
-           The Loft
-       </div>
+    <!-- Hero Gallery -->
+    <section class="w-full overflow-hidden">
+        <div class="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-0.5">
+            <!-- Large Main Image -->
+            <div class="aspect-[1.28/1] overflow-hidden bg-zinc-100 h-full">
+                <img src="/Users/etosegun/.gemini/antigravity/brain/b929dc65-9ec5-4996-b189-70b48bc74a51/woven_bag_hero_1769461290993.png"
+                    alt="Woven Leather Bag"
+                    class="w-full h-full object-cover transition-opacity duration-700 hover:opacity-90">
+            </div>
+            <!-- Portrait Image 1 -->
+            <div class="aspect-[0.64/1] overflow-hidden bg-zinc-100 h-full">
+                <img src="/Users/etosegun/.gemini/antigravity/brain/b929dc65-9ec5-4996-b189-70b48bc74a51/fabric_drape_hero_1769461306620.png"
+                    alt="Fabric Drape Detail"
+                    class="w-full h-full object-cover transition-opacity duration-700 hover:opacity-90">
+            </div>
+            <!-- Portrait Image 2 -->
+            <div class="aspect-[0.64/1] overflow-hidden bg-zinc-100 h-full">
+                <img src="/Users/etosegun/.gemini/antigravity/brain/b929dc65-9ec5-4996-b189-70b48bc74a51/beaded_jewelry_hero_1769461318592.png"
+                    alt="Beaded Accessory"
+                    class="w-full h-full object-cover transition-opacity duration-700 hover:opacity-90">
+            </div>
+        </div>
+    </section>
 
+    <!-- Approach Heading -->
+    <section class="py-24 px-6 text-center max-w-2xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-light mb-8">
+            <span class="font-serif italic lowercase" style="font-family: 'Playfair Display', serif;">our</span>
+            Approach
+        </h2>
+        <p class="text-zinc-500 text-sm leading-relaxed mb-12">
+            Your fashion brand, managed end to end. Creative direction, content, and rollout that is as strategic as it
+            is stylish, delivered with a boutique approach to take you to your next revenue level without the cost or
+            complexity of hiring in-house.
+        </p>
 
-       <div class="hidden md:flex space-x-8 text-[10px] uppercase tracking-[0.2em] font-medium items-center">
-           <a href="#about" class="nav-link">About</a>
-           <a href="#contact" class="bg-black text-white px-6 py-2.5 hover:bg-zinc-800 transition-colors">Inquire</a>
-       </div>
+        <!-- Strategy Audit Button -->
+        <div class="flex justify-center">
+            <a href="#contact"
+                class="bg-black text-white px-12 py-5 rounded-full text-[11px] font-semibold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-all transform hover:scale-105">
+                Free Strategy Audit
+            </a>
+        </div>
+    </section>
 
+    <!-- Stacking Services Section -->
+    <section id="services" class="relative pt-24 pb-12">
+        <!-- Section Header -->
+        <div class="px-6 md:px-20 mb-20 max-w-7xl mx-auto">
+            <h2 class="serif text-4xl md:text-6xl italic font-light">Services</h2>
+        </div>
 
-       <!-- Mobile Toggle -->
-       <button class="md:hidden text-dark uppercase text-[10px] tracking-widest font-bold">Menu</button>
-   </nav>
+        <div class="services-stack">
+            <!-- Content Services -->
+            <div
+                class="service-panel sticky top-0 h-screen w-full flex flex-col md:flex-row border-t border-zinc-100 z-10 overflow-hidden bg-[#F9F7F2]">
+                <div class="w-full md:w-1/2 h-1/2 md:h-full overflow-hidden bg-zinc-50">
+                    <img src="/Users/etosegun/.gemini/antigravity/brain/6513c066-1862-4467-a759-1047d3d69d8e/content_services_image_1769467613294.png"
+                        alt="Content Services" class="w-full h-full object-cover">
+                </div>
+                <div class="w-full md:w-1/2 h-1/2 md:h-full flex flex-col justify-center px-10 md:px-24">
+                    <h3 class="text-3xl md:text-5xl font-light mb-8">
+                        <span class="font-serif italic lowercase"
+                            style="font-family: 'Playfair Display', serif;">content</span> Services
+                    </h3>
+                    <p class="text-zinc-500 text-sm md:text-base leading-relaxed mb-10 max-w-md">
+                        The vision is clear. The product is strong. But when content is fragmented, strategy is lost. We
+                        bring it all together end to end: creative direction, production, rollout.
+                    </p>
+                    <p class="text-zinc-500 text-sm md:text-base leading-relaxed mb-10 max-w-md">
+                        Every asset is informed by fashion marketing expertise, because without strategic content, your
+                        brand can't scale its revenue.
+                    </p>
+                    <a href="#"
+                        class="text-[10px] uppercase tracking-[0.3em] font-medium border-b border-black pb-1 w-max hover:opacity-50 transition-opacity">Learn
+                        More</a>
+                </div>
+            </div>
 
+            <!-- Consulting Services -->
+            <div
+                class="service-panel sticky top-0 h-screen w-full flex flex-col md:flex-row border-t border-zinc-100 z-20 overflow-hidden shadow-[0_-20px_50px_rgba(0,0,0,0.05)] bg-[#F9F7F2]">
+                <div class="w-full md:w-1/2 h-1/2 md:h-full overflow-hidden bg-zinc-50">
+                    <img src="/Users/etosegun/.gemini/antigravity/brain/6513c066-1862-4467-a759-1047d3d69d8e/consulting_services_image_1769467629013.png"
+                        alt="Consulting Services" class="w-full h-full object-cover">
+                </div>
+                <div class="w-full md:w-1/2 h-1/2 md:h-full flex flex-col justify-center px-10 md:px-24">
+                    <h3 class="text-3xl md:text-5xl font-light mb-8">
+                        <span class="font-serif italic lowercase"
+                            style="font-family: 'Playfair Display', serif;">consulting</span> Services
+                    </h3>
+                    <p class="text-zinc-500 text-sm md:text-base leading-relaxed mb-10 max-w-md">
+                        You've built a strong brand, but scaling it requires more than good taste. We help you refine
+                        the business behind the brand, from strategy and systems to team support and decision-making.
+                    </p>
+                    <p class="text-zinc-500 text-sm md:text-base leading-relaxed mb-10 max-w-md">
+                        It's the kind of high-level thinking most agencies skip, and exactly what growing fashion
+                        companies actually need.
+                    </p>
+                    <a href="#"
+                        class="text-[10px] uppercase tracking-[0.3em] font-medium border-b border-black pb-1 w-max hover:opacity-50 transition-opacity">Learn
+                        More</a>
+                </div>
+            </div>
 
-   <!-- Hero Section -->
-   <section class="min-h-screen flex flex-col items-center justify-center px-6 pt-20">
-       <div class="max-w-5xl text-center fade-in" id="hero-content">
-           <span class="text-[10px] uppercase tracking-[0.4em] text-accent-gray mb-6 block">Boutique Management Agency</span>
-           <h1 class="serif text-5xl md:text-8xl leading-[1.1] font-light mb-10 italic">
-               Elevating brands through <br class="hidden md:block"> intentional curation.
-           </h1>
-           <div class="flex flex-col md:row items-center justify-center space-y-8 md:space-y-0 md:space-x-12 mt-12">
-               <p class="max-w-md text-sm leading-relaxed text-zinc-600">
-                   We specialize in creative management, editorial content strategy, and digital rollout for high-growth lifestyle brands.
-               </p>
-               <a href="#portfolio" class="group flex items-center text-[10px] uppercase tracking-[0.3em] font-bold">
-                   View Case Studies
-                   <svg class="ml-3 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-               </a>
-           </div>
-       </div>
+            <!-- Management Services -->
+            <div
+                class="service-panel sticky top-0 h-screen w-full flex flex-col md:flex-row border-t border-zinc-100 z-30 overflow-hidden shadow-[0_-20px_50px_rgba(0,0,0,0.05)] bg-[#F9F7F2]">
+                <div class="w-full md:w-1/2 h-1/2 md:h-full overflow-hidden bg-zinc-50">
+                    <img src="/Users/etosegun/.gemini/antigravity/brain/6513c066-1862-4467-a759-1047d3d69d8e/management_services_image_1769467641802.png"
+                        alt="Management Services" class="w-full h-full object-cover">
+                </div>
+                <div class="w-full md:w-1/2 h-1/2 md:h-full flex flex-col justify-center px-10 md:px-24">
+                    <h3 class="text-3xl md:text-5xl font-light mb-8">
+                        <span class="font-serif italic lowercase"
+                            style="font-family: 'Playfair Display', serif;">management</span> Services
+                    </h3>
+                    <p class="text-zinc-500 text-sm md:text-base leading-relaxed mb-10 max-w-md">
+                        Growing brands need marketing management that adapts to their evolving needs.
+                    </p>
+                    <p class="text-zinc-500 text-sm md:text-base leading-relaxed mb-10 max-w-md">
+                        Whether you want us to fully own your marketing or work hand-in-hand with your team, we offer
+                        flexible partnership models designed to lighten your load. By taking over daily operations, we
+                        free you to lead with clarity, invest your energy where it matters most and buy back your time
+                        to focus on the parts of the business you love most.
+                    </p>
+                    <a href="#"
+                        class="text-[10px] uppercase tracking-[0.3em] font-medium border-b border-black pb-1 w-max hover:opacity-50 transition-opacity">Learn
+                        More</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Recent Projects Section -->
+    <section id="portfolio" class="py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 mb-16 text-center">
+            <h2 class="text-4xl md:text-5xl font-light mb-6">
+                <span class="font-serif italic lowercase" style="font-family: 'Playfair Display', serif;">recent</span>
+                Projects
+            </h2>
+            <p class="text-zinc-500 text-sm leading-relaxed max-w-2xl mx-auto">
+                Recent shoots designed with strategy at the forefront and curation in the details. Each project captures
+                not
+                just a product, but a lifestyle—brought to life for the brands we're proud to call our clients.
+            </p>
+        </div>
 
-       <!-- Hero Image -->
-       <div class="w-full max-w-7xl mt-20 px-4 fade-in">
-           <div class="aspect-[21/9] overflow-hidden bg-zinc-200">
-               <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000"
-                    alt="Studio space"
-                    class="w-full h-full object-cover grayscale brightness-95">
-           </div>
-       </div>
-   </section>
+        <!-- Horizontal Scroll Gallery -->
+        <div class="flex overflow-x-auto pb-12 hide-scrollbar snap-x snap-mandatory">
+            <div class="flex flex-nowrap gap-6 px-6 md:px-20">
+                <!-- Project 1: Studio 335 -->
+                <div class="flex-none w-[85vw] md:w-[450px] snap-start">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-zinc-100 mb-6 group cursor-pointer">
+                        <img src="/Users/etosegun/.gemini/antigravity/brain/6513c066-1862-4467-a759-1047d3d69d8e/studio_335_project_image_1769467909181.png"
+                            alt="Studio 335"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-black/10 transition-opacity duration-500 group-hover:bg-black/20 flex items-center justify-center">
+                            <h4 class="text-white text-4xl md:text-5xl font-bold tracking-tighter opacity-90">studio 335
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="px-2">
+                        <h5 class="text-sm font-semibold mb-2">Pilates, Redefined</h5>
+                        <p class="text-xs text-zinc-500 leading-relaxed">
+                            A new take on Pilates, captured through a fashion-forward lens moving away from traditional
+                            wellness imagery. Shot in a curated home setting, the campaign reflects the studio's
+                            semi-private membership approach.
+                        </p>
+                    </div>
+                </div>
 
+                <!-- Project 2: Danier -->
+                <div class="flex-none w-[85vw] md:w-[450px] snap-start">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-zinc-100 mb-6 group cursor-pointer">
+                        <img src="/Users/etosegun/.gemini/antigravity/brain/6513c066-1862-4467-a759-1047d3d69d8e/danier_project_image_1769467921702.png"
+                            alt="Danier"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-black/10 transition-opacity duration-500 group-hover:bg-black/20 flex items-center justify-center">
+                            <h4
+                                class="text-white text-3xl md:text-4xl font-black tracking-[0.3em] uppercase opacity-90">
+                                Danier</h4>
+                        </div>
+                    </div>
+                    <div class="px-2">
+                        <h5 class="text-sm font-semibold mb-2">An Editorial Approach To Outerwear</h5>
+                        <p class="text-xs text-zinc-500 leading-relaxed">
+                            A multi-scene eyewear campaign for a premium leather collection, spanning mid-century
+                            interiors to street style moments. Designed to highlight craftsmanship across both men's and
+                            women's silhouettes.
+                        </p>
+                    </div>
+                </div>
 
-   <!-- Services Section -->
-   <section id="services" class="py-32 px-6 md:px-20 bg-white">
-       <div class="max-w-7xl mx-auto">
-           <div class="grid md:grid-cols-2 gap-20 items-end mb-24">
-               <div>
-                   <h2 class="serif text-4xl md:text-6xl italic font-light">Our Approach</h2>
-               </div>
-               <div>
-                   <p class="text-zinc-500 leading-relaxed text-sm max-w-sm">
-                       Moving beyond simple management. We build holistic ecosystems for brands that demand a premium presence.
-                   </p>
-               </div>
-           </div>
+                <!-- Project 3: Cortelli -->
+                <div class="flex-none w-[85vw] md:w-[450px] snap-start">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-zinc-100 mb-6 group cursor-pointer">
+                        <img src="/Users/etosegun/.gemini/antigravity/brain/6513c066-1862-4467-a759-1047d3d69d8e/cortelli_project_image_1769467934716.png"
+                            alt="Cortelli"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-black/10 transition-opacity duration-500 group-hover:bg-black/20 flex items-center justify-center">
+                            <h4 class="text-white text-4xl md:text-5xl font-light tracking-tight opacity-90 uppercase">
+                                Cortelli</h4>
+                        </div>
+                    </div>
+                    <div class="px-2">
+                        <h5 class="text-sm font-semibold mb-2">From Court To City</h5>
+                        <p class="text-xs text-zinc-500 leading-relaxed">
+                            A luxury leather paddle bag brand explored beyond the court. By placing it in lifestyle
+                            settings and capturing it through a mid-century, sophisticated lens, we showcased its
+                            balance of utility and style.
+                        </p>
+                    </div>
+                </div>
 
+                <!-- Project 4: SR -->
+                <div class="flex-none w-[85vw] md:w-[450px] snap-start">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-zinc-100 mb-6 group cursor-pointer">
+                        <img src="/Users/etosegun/.gemini/antigravity/brain/6513c066-1862-4467-a759-1047d3d69d8e/sr_project_image_1769467947849.png"
+                            alt="SR"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-black/10 transition-opacity duration-500 group-hover:bg-black/20 flex items-center justify-center">
+                            <h4 class="text-white text-6xl md:text-7xl font-serif italic opacity-90">SR</h4>
+                        </div>
+                    </div>
+                    <div class="px-2">
+                        <h5 class="text-sm font-semibold mb-2">Street To Studio</h5>
+                        <p class="text-xs text-zinc-500 leading-relaxed">
+                            We captured the collection across both city streets and studio spaces, creating everything
+                            needed for launch. Neutral settings framed the dresses, balancing playful romance with New
+                            York's energetic rhythm.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-           <div class="grid md:grid-cols-3 gap-12">
-               <!-- Service 1 -->
-               <div class="border-t border-zinc-100 pt-10 group fade-in">
-                   <span class="text-[10px] text-accent-gray font-mono mb-6 block">01 /</span>
-                   <h3 class="serif text-2xl mb-4 italic">Management</h3>
-                   <p class="text-xs text-zinc-500 leading-loose">Comprehensive day-to-day operations and strategic oversight for digital entities and personal brands.</p>
-               </div>
-               <!-- Service 2 -->
-               <div class="border-t border-zinc-100 pt-10 group fade-in">
-                   <span class="text-[10px] text-accent-gray font-mono mb-6 block">02 /</span>
-                   <h3 class="serif text-2xl mb-4 italic">Creative Direction</h3>
-                   <p class="text-xs text-zinc-500 leading-loose">Visual storytelling, moodboarding, and production management to ensure aesthetic consistency across all touchpoints.</p>
-               </div>
-               <!-- Service 3 -->
-               <div class="border-t border-zinc-100 pt-10 group fade-in">
-                   <span class="text-[10px] text-accent-gray font-mono mb-6 block">03 /</span>
-                   <h3 class="serif text-2xl mb-4 italic">Partnerships</h3>
-                   <p class="text-xs text-zinc-500 leading-loose">Strategic alignment with global brands that share your values, facilitated through professional mediation.</p>
-               </div>
-           </div>
-       </div>
-   </section>
+    <style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
 
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
 
-   <!-- Portfolio Grid -->
-   <section id="portfolio" class="py-32 px-6 md:px-12">
-       <div class="max-w-7xl mx-auto">
-           <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24">
-              
-               <!-- Project 1 -->
-               <div class="fade-in group cursor-pointer">
-                   <div class="image-container aspect-[3/4] overflow-hidden bg-zinc-200 mb-8">
-                       <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=1000"
-                            alt="Editorial"
-                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all">
-                   </div>
-                   <div class="flex justify-between items-start">
-                       <div>
-                           <h4 class="serif text-2xl italic">The New Muse</h4>
-                           <p class="text-[10px] uppercase tracking-widest text-accent-gray mt-1">Creative Direction / Management</p>
-                       </div>
-                       <span class="text-[10px] font-medium border border-zinc-200 px-3 py-1 rounded-full">2024</span>
-                   </div>
-               </div>
+    <!-- Process Section -->
+    <section id="process" class="py-32 px-6 md:px-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-24">
+                <h2 class="text-4xl md:text-5xl font-light mb-8">
+                    <span class="font-serif italic lowercase" style="font-family: 'Playfair Display', serif;">the</span>
+                    Process
+                </h2>
+                <p class="text-zinc-500 text-sm leading-relaxed max-w-xl mx-auto">
+                    A refined method for modern influence. We blend strategy with spontaneous creativity to deliver
+                    results that feel effortless but are meticulously planned.
+                </p>
+            </div>
 
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div class="fade-in">
+                    <span class="text-[10px] text-zinc-400 font-mono mb-4 block">01 / CONCEPT</span>
+                    <h3 class="serif text-xl italic mb-4">The Vision</h3>
+                    <p class="text-xs text-zinc-500 leading-relaxed">Deep-dive strategy, moodboarding, and aesthetic
+                        positioning to align your brand with your future goals.</p>
+                </div>
+                <div class="fade-in">
+                    <span class="text-[10px] text-zinc-400 font-mono mb-4 block">02 / CREATION</span>
+                    <h3 class="serif text-xl italic mb-4">The Execution</h3>
+                    <p class="text-xs text-zinc-500 leading-relaxed">High-end content production and creative direction
+                        that captures the raw essence of your brand’s story.</p>
+                </div>
+                <div class="fade-in">
+                    <span class="text-[10px] text-zinc-400 font-mono mb-4 block">03 / CURATION</span>
+                    <h3 class="serif text-xl italic mb-4">The Refinement</h3>
+                    <p class="text-xs text-zinc-500 leading-relaxed">Every detail scrutinized. We curate your digital
+                        presence to ensure every touchpoint feels premium.</p>
+                </div>
+                <div class="fade-in">
+                    <span class="text-[10px] text-zinc-400 font-mono mb-4 block">04 / CONNECTION</span>
+                    <h3 class="serif text-xl italic mb-4">The Impact</h3>
+                    <p class="text-xs text-zinc-500 leading-relaxed">Strategic rollout and brand partnerships that
+                        connect you with global audiences and industry leaders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-               <!-- Project 2 -->
-               <div class="fade-in group cursor-pointer md:mt-32">
-                   <div class="image-container aspect-[3/4] overflow-hidden bg-zinc-200 mb-8">
-                       <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1000"
-                            alt="Fashion"
-                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all">
-                   </div>
-                   <div class="flex justify-between items-start">
-                       <div>
-                           <h4 class="serif text-2xl italic">Atelier Series</h4>
-                           <p class="text-[10px] uppercase tracking-widest text-accent-gray mt-1">Editorial Strategy</p>
-                       </div>
-                       <span class="text-[10px] font-medium border border-zinc-200 px-3 py-1 rounded-full">2023</span>
-                   </div>
-               </div>
+    <!-- Large Text Marquee / CTA -->
+    <section class="py-20 overflow-hidden border-y border-zinc-200">
+        <div class="whitespace-nowrap flex animate-marquee">
+            <div class="serif text-7xl md:text-9xl italic font-light px-4 opacity-10 uppercase tracking-tighter">
+                Creative Direction • Management • Editorial Strategy • Digital Rollout •
+            </div>
+            <div class="serif text-7xl md:text-9xl italic font-light px-4 opacity-10 uppercase tracking-tighter">
+                Creative Direction • Management • Editorial Strategy • Digital Rollout •
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer id="contact" class="py-24 px-6 md:px-12 border-t border-zinc-100">
+        <div class="max-w-screen-2xl mx-auto flex flex-col items-center">
+            <!-- CTA Button -->
+            <div class="mb-8">
+                <a href="contact.html"
+                    class="bg-black text-white px-12 py-5 rounded-full text-[11px] font-semibold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-all transform hover:scale-105">
+                    Book Your Next Shoot
+                </a>
+            </div>
 
-               <!-- Project 3 -->
-               <div class="fade-in group cursor-pointer">
-                   <div class="image-container aspect-[3/4] overflow-hidden bg-zinc-200 mb-8">
-                       <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=1000"
-                            alt="Lifestyle"
-                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all">
-                   </div>
-                   <div class="flex justify-between items-start">
-                       <div>
-                           <h4 class="serif text-2xl italic">Core Values</h4>
-                           <p class="text-[10px] uppercase tracking-widest text-accent-gray mt-1">Brand Partnerships</p>
-                       </div>
-                       <span class="text-[10px] font-medium border border-zinc-200 px-3 py-1 rounded-full">2024</span>
-                   </div>
-               </div>
+            <!-- Instagram Handle -->
+            <div class="mb-16">
+                <a href="#"
+                    class="text-[11px] tracking-[0.15em] text-zinc-500 lowercase hover:text-black transition-colors">@realinfluence.house</a>
+            </div>
 
+            <!-- Instagram Feed Grid -->
+            <div class="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-1 mb-24">
+                <div class="aspect-square bg-zinc-50 overflow-hidden relative group cursor-pointer">
+                    <img src="/Users/etosegun/.gemini/antigravity/brain/6513c066-1862-4467-a759-1047d3d69d8e/instagram_feed_1_fashion_editorial_1769468179782.png"
+                        alt="Instagram Post"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="aspect-square bg-zinc-50 overflow-hidden relative group cursor-pointer">
+                    <img src="/Users/etosegun/.gemini/antigravity/brain/6513c066-1862-4467-a759-1047d3d69d8e/instagram_feed_2_vibrant_red_1769468192160.png"
+                        alt="Instagram Post"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <!-- Play Icon Overlay -->
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <svg class="w-10 h-10 text-white opacity-90" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.333-5.89a1.5 1.5 0 000-2.538L6.3 2.84z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="aspect-square bg-zinc-50 overflow-hidden relative group cursor-pointer">
+                    <img src="/Users/etosegun/.gemini/antigravity/brain/6513c066-1862-4467-a759-1047d3d69d8e/instagram_feed_3_studio_muse_pose_1769468204317.png"
+                        alt="Instagram Post"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="aspect-square bg-zinc-50 overflow-hidden relative group cursor-pointer">
+                    <img src="/Users/etosegun/.gemini/antigravity/brain/6513c066-1862-4467-a759-1047d3d69d8e/content_services_image_1769467613294.png"
+                        alt="Instagram Post"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="aspect-square bg-zinc-50 overflow-hidden relative group cursor-pointer">
+                    <img src="/Users/etosegun/.gemini/antigravity/brain/6513c066-1862-4467-a759-1047d3d69d8e/consulting_services_image_1769467629013.png"
+                        alt="Instagram Post"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <!-- Play Icon Overlay -->
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <svg class="w-10 h-10 text-white opacity-90" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.333-5.89a1.5 1.5 0 000-2.538L6.3 2.84z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="aspect-square bg-zinc-50 overflow-hidden relative group cursor-pointer">
+                    <img src="/Users/etosegun/.gemini/antigravity/brain/6513c066-1862-4467-a759-1047d3d69d8e/management_services_image_1769467641802.png"
+                        alt="Instagram Post"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <!-- Play Icon Overlay -->
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <svg class="w-10 h-10 text-white opacity-90" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.333-5.89a1.5 1.5 0 000-2.538L6.3 2.84z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
 
-               <!-- Project 4 -->
-               <div class="fade-in group cursor-pointer md:mt-32">
-                   <div class="image-container aspect-[3/4] overflow-hidden bg-zinc-200 mb-8">
-                       <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1000"
-                            alt="Retail"
-                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all">
-                   </div>
-                   <div class="flex justify-between items-start">
-                       <div>
-                           <h4 class="serif text-2xl italic">Modern Studio</h4>
-                           <p class="text-[10px] uppercase tracking-widest text-accent-gray mt-1">Digital Rollout</p>
-                       </div>
-                       <span class="text-[10px] font-medium border border-zinc-200 px-3 py-1 rounded-full">2023</span>
-                   </div>
-               </div>
+            <!-- Newsletter -->
+            <div class="w-full max-w-xl text-center mb-24">
+                <p class="text-xs tracking-[0.05em] text-zinc-600 mb-8">Sign up with your email address to receive news
+                    and updates.</p>
+                <form class="flex flex-col md:row items-stretch gap-2">
+                    <input type="email" placeholder=""
+                        class="flex-grow bg-[#F5F5F3] px-6 py-4 text-sm focus:outline-none placeholder-zinc-400">
+                    <button type="submit"
+                        class="bg-black text-white px-10 py-4 text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-colors">Sign
+                        Up</button>
+                </form>
+            </div>
 
+            <!-- Social Links & Branding -->
+            <div class="w-full flex flex-col items-center space-y-12 mb-16">
+                <div class="flex space-x-8 text-[11px] uppercase tracking-[0.2em] font-medium text-zinc-500">
+                    <a href="#" class="hover:text-black transition-colors">Instagram</a>
+                    <a href="#" class="hover:text-black transition-colors">Pinterest</a>
+                </div>
 
-           </div>
-       </div>
-   </section>
+                <div class="text-center">
+                    <h2 class="branding-font text-2xl md:text-3xl tracking-[0.15em] font-bold uppercase mb-2">Real
+                        Influence House</h2>
+                    <p class="text-[9px] tracking-[0.1em] text-zinc-400 uppercase">Fashion Marketing Agency — Montreal &
+                        NYC</p>
+                </div>
+            </div>
 
+            <!-- Copyright Footer -->
+            <div
+                class="w-full pt-12 border-t border-zinc-100 flex flex-col md:row justify-between items-center text-[10px] text-zinc-400 uppercase tracking-[0.15em]">
+                <div>Real Influence House © 2026</div>
+            </div>
+        </div>
+    </footer>
 
-   <!-- Large Text Marquee / CTA -->
-   <section class="py-20 overflow-hidden border-y border-zinc-200">
-       <div class="whitespace-nowrap flex animate-marquee">
-           <div class="serif text-7xl md:text-9xl italic font-light px-4 opacity-10 uppercase tracking-tighter">
-               Creative Direction • Management • Editorial Strategy • Digital Rollout •
-           </div>
-           <div class="serif text-7xl md:text-9xl italic font-light px-4 opacity-10 uppercase tracking-tighter">
-               Creative Direction • Management • Editorial Strategy • Digital Rollout •
-           </div>
-       </div>
-   </section>
+    <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1
+        };
 
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
 
-   <!-- Footer / Contact -->
-   <footer id="contact" class="pt-32 pb-12 px-6 md:px-12 bg-[#141414] text-white">
-       <div class="max-w-7xl mx-auto">
-           <div class="grid md:grid-cols-2 gap-20 mb-32">
-               <div>
-                   <h2 class="serif text-5xl md:text-7xl italic font-light mb-8">Let's work <br> together.</h2>
-                   <p class="text-zinc-400 text-sm max-w-sm mb-12">
-                       Currently accepting new creative partners for Q3 2026. Inquire for our current rate card and capabilities deck.
-                   </p>
-                   <a href="mailto:hello@theloft.com" class="text-xl md:text-2xl border-b border-zinc-700 pb-2 hover:border-white transition-colors">hello@theloft-mgmt.com</a>
-               </div>
-              
-               <div class="flex flex-col justify-end items-start md:items-end">
-                   <div class="space-y-4 text-right">
-                       <p class="text-[10px] uppercase tracking-[0.3em] text-zinc-500 mb-6 block">Follow Us</p>
-                       <a href="#" class="block text-sm hover:text-zinc-400 transition-colors">Instagram</a>
-                       <a href="#" class="block text-sm hover:text-zinc-400 transition-colors">LinkedIn</a>
-                       <a href="#" class="block text-sm hover:text-zinc-400 transition-colors">TikTok</a>
-                   </div>
-               </div>
-           </div>
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
 
+    <style>
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
 
-           <div class="pt-12 border-t border-zinc-800 flex flex-col md:row justify-between items-center space-y-6 md:space-y-0">
-               <div class="text-[10px] uppercase tracking-[0.2em] font-light">
-                   © 2026 The Loft Management. All Rights Reserved.
-               </div>
-               <div class="flex space-x-12 text-[10px] uppercase tracking-[0.2em]">
-                   <a href="#" class="hover:text-zinc-400">Privacy Policy</a>
-                   <a href="#" class="hover:text-zinc-400">Terms of Service</a>
-               </div>
-               <div class="serif italic text-lg opacity-50">
-                   The Loft
-               </div>
-           </div>
-       </div>
-   </footer>
+            100% {
+                transform: translateX(-50%);
+            }
+        }
 
-
-   <script>
-       // Navbar scroll effect
-       const navbar = document.getElementById('navbar');
-       window.addEventListener('scroll', () => {
-           if (window.scrollY > 50) {
-               navbar.classList.add('bg-white/80', 'backdrop-blur-md', 'py-4', 'shadow-sm');
-               navbar.classList.remove('py-6');
-           } else {
-               navbar.classList.remove('bg-white/80', 'backdrop-blur-md', 'py-4', 'shadow-sm');
-               navbar.classList.add('py-6');
-           }
-       });
-
-
-       // Intersection Observer for fade-in animations
-       const observerOptions = {
-           threshold: 0.1
-       };
-
-
-       const observer = new IntersectionObserver((entries) => {
-           entries.forEach(entry => {
-               if (entry.isIntersecting) {
-                   entry.target.classList.add('visible');
-               }
-           });
-       }, observerOptions);
-
-
-       document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-
-       // Smooth marquee animation fallback if CSS isn't enough
-       // Note: Simple CSS animation is used here
-   </script>
-
-
-   <style>
-       @keyframes marquee {
-           0% { transform: translateX(0); }
-           100% { transform: translateX(-50%); }
-       }
-       .animate-marquee {
-           animation: marquee 40s linear infinite;
-       }
-   </style>
+        .animate-marquee {
+            animation: marquee 30s linear infinite;
+        }
+    </style>
 </body>
+
 </html>

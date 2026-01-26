@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Real Influence House</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-cream: #F9F7F2;
+            --text-dark: #1A1A1A;
+            --accent-gray: #7A7A7A;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .branding-font {
+            font-family: 'Bodoni Moda', serif;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--text-dark);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Custom scrollbar for premium feel */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #D1CEC5;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <header class="w-full bg-transparent px-6 md:px-12 py-12">
+        <div
+            class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1.5fr] lg:grid-cols-[2fr_auto_2fr] gap-8 items-center">
+            <!-- Left: Nav Links -->
+            <nav
+                class="flex flex-wrap gap-x-6 gap-y-2 text-[11px] uppercase tracking-[0.2em] font-medium text-zinc-500 whitespace-nowrap">
+                <a href="index.html" class="hover:text-black transition-colors">○ Home</a>
+                <a href="services.html" class="text-black transition-colors">○ Services</a>
+            </nav>
+
+            <!-- Center: Logo & Tagline -->
+            <div class="text-center min-w-max">
+                <h1 class="branding-font text-2xl md:text-3xl tracking-[0.02em] font-medium uppercase mb-1">Real
+                    Influence
+                    House</h1>
+                <p class="text-[10px] tracking-[0.1em] text-zinc-400 uppercase">Fashion Marketing Agency — Montreal &
+                    NYC</p>
+            </div>
+
+            <!-- Right: Inquire Button -->
+            <div class="flex justify-end">
+                <a href="contact.html"
+                    class="bg-black text-white px-10 py-4 rounded-full text-[10px] uppercase tracking-[0.2em] hover:bg-zinc-800 transition-colors">Inquire</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Hero Section -->
+    <section class="py-32 px-6 md:px-12 text-center">
+        <div class="max-w-4xl mx-auto flex flex-col items-center">
+            <h2 class="text-4xl md:text-5xl font-light mb-10">
+                <span class="font-serif italic lowercase" style="font-family: 'Playfair Display', serif;">our</span>
+                SERVICES
+            </h2>
+            <p class="text-zinc-600 text-sm md:text-base leading-relaxed mb-16 max-w-2xl mx-auto">
+                You have the vision, we help you bring it to life. Our work sits at the intersection of strategic
+                consulting and refined content production, tailored to fashion brands that want to grow without adding
+                unnecessary complexity. Less managing, more momentum.
+            </p>
+            <div class="flex justify-center">
+                <a href="contact.html"
+                    class="bg-black text-white px-12 py-5 rounded-full text-[11px] font-semibold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-all transform hover:scale-105">
+                    Book a Free Strategy Audit
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consulting & Strategy Section -->
+    <section class="flex flex-col md:flex-row border-t border-zinc-100 min-h-[80vh]">
+        <div class="w-full md:w-1/2 flex flex-col justify-center px-10 md:px-24 py-20 order-2 md:order-1">
+            <h3 class="text-3xl md:text-5xl font-light mb-8">
+                <span class="font-serif italic lowercase" style="font-family: 'Playfair Display', serif;">consulting &
+                    strategy</span> Services
+            </h3>
+            <p class="text-zinc-500 text-sm md:text-base leading-relaxed mb-12 max-w-md">
+                Our consulting services are built for fashion founders who want to scale intentionally, with expert
+                support on brand positioning, marketing strategy, team structure, and operational flow. Whether you're
+                navigating growth or refining your next move, we help you lead with confidence and focus.
+            </p>
+
+            <!-- Accordion -->
+            <div class="space-y-4 border-t border-zinc-100 pt-8">
+                <div class="accordion-item border-b border-zinc-100 pb-4">
+                    <button
+                        class="w-full flex justify-between items-center text-left hover:text-zinc-400 transition-colors py-2"
+                        onclick="toggleAccordion(this)">
+                        <span class="text-xs uppercase tracking-[0.2em]">01. Audit & Action Plan</span>
+                        <span class="text-lg font-light leading-none">+</span>
+                    </button>
+                    <div class="accordion-content hidden pt-4 pb-2 text-zinc-500 text-xs leading-relaxed max-w-sm">
+                        A comprehensive deep-dive into your current brand ecosystem, identifying bottlenecks and
+                        opportunities for high-impact growth.
+                    </div>
+                </div>
+                <div class="accordion-item border-b border-zinc-100 pb-4">
+                    <button
+                        class="w-full flex justify-between items-center text-left hover:text-zinc-400 transition-colors py-2"
+                        onclick="toggleAccordion(this)">
+                        <span class="text-xs uppercase tracking-[0.2em]">02. 1:1 Consulting</span>
+                        <span class="text-lg font-light leading-none">+</span>
+                    </button>
+                    <div class="accordion-content hidden pt-4 pb-2 text-zinc-500 text-xs leading-relaxed max-w-sm">
+                        Direct access to strategic advisory sessions focused on your specific business challenges and
+                        long-term vision.
+                    </div>
+                </div>
+                <div class="accordion-item border-b border-zinc-100 pb-4">
+                    <button
+                        class="w-full flex justify-between items-center text-left hover:text-zinc-400 transition-colors py-2"
+                        onclick="toggleAccordion(this)">
+                        <span class="text-xs uppercase tracking-[0.2em]">03. Brand Strategy Refresh</span>
+                        <span class="text-lg font-light leading-none">+</span>
+                    </button>
+                    <div class="accordion-content hidden pt-4 pb-2 text-zinc-500 text-xs leading-relaxed max-w-sm">
+                        Realigning your brand's core pillars to ensure relevance in an ever-evolving market while
+                        maintaining its premium soul.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full md:w-1/2 h-[50vh] md:h-auto overflow-hidden order-1 md:order-2">
+            <img src="/Users/etosegun/.gemini/antigravity/brain/6513c066-1862-4467-a759-1047d3d69d8e/management_services_image_1769467641802.png"
+                alt="Consulting Strategy" class="w-full h-full object-cover">
+        </div>
+    </section>
+
+    <!-- Content Services Section -->
+    <section class="flex flex-col md:flex-row border-t border-zinc-100 min-h-[80vh]">
+        <div class="w-full md:w-1/2 h-[50vh] md:h-auto overflow-hidden">
+            <img src="/Users/etosegun/.gemini/antigravity/brain/6513c066-1862-4467-a759-1047d3d69d8e/content_services_image_1769467613294.png"
+                alt="Content Services" class="w-full h-full object-cover">
+        </div>
+        <div class="w-full md:w-1/2 flex flex-col justify-center px-10 md:px-24 py-20">
+            <h3 class="text-3xl md:text-5xl font-light mb-8">
+                <span class="font-serif italic lowercase" style="font-family: 'Playfair Display', serif;">content</span>
+                Services
+            </h3>
+            <p class="text-zinc-500 text-sm md:text-base leading-relaxed mb-12 max-w-md">
+                We plan, produce, and deliver content that's on-brand, on time, and built to convert, without the
+                back-and-forth. From monthly shoots to social-first strategy, we bring structure, clarity, and creative
+                that actually moves product.
+            </p>
+
+            <!-- Accordion -->
+            <div class="space-y-4 border-t border-zinc-100 pt-8">
+                <div class="accordion-item border-b border-zinc-100 pb-4">
+                    <button
+                        class="w-full flex justify-between items-center text-left hover:text-zinc-400 transition-colors py-2"
+                        onclick="toggleAccordion(this)">
+                        <span class="text-xs uppercase tracking-[0.2em]">01. Campaign Refresh</span>
+                        <span class="text-lg font-light leading-none">+</span>
+                    </button>
+                    <div class="accordion-content hidden pt-4 pb-2 text-zinc-500 text-xs leading-relaxed max-w-sm">
+                        Revitalizing your brand's visual identity for new seasonal launches or collection drops with a
+                        fresh, strategic lens.
+                    </div>
+                </div>
+                <div class="accordion-item border-b border-zinc-100 pb-4">
+                    <button
+                        class="w-full flex justify-between items-center text-left hover:text-zinc-400 transition-colors py-2"
+                        onclick="toggleAccordion(this)">
+                        <span class="text-xs uppercase tracking-[0.2em]">02. Content Trip</span>
+                        <span class="text-lg font-light leading-none">+</span>
+                    </button>
+                    <div class="accordion-content hidden pt-4 pb-2 text-zinc-500 text-xs leading-relaxed max-w-sm">
+                        Curated destination content production to give your brand a global, cinematic aesthetic across
+                        all digital touchpoints.
+                    </div>
+                </div>
+                <div class="accordion-item border-b border-zinc-100 pb-4">
+                    <button
+                        class="w-full flex justify-between items-center text-left hover:text-zinc-400 transition-colors py-2"
+                        onclick="toggleAccordion(this)">
+                        <span class="text-xs uppercase tracking-[0.2em]">03. Content Production</span>
+                        <span class="text-lg font-light leading-none">+</span>
+                    </button>
+                    <div class="accordion-content hidden pt-4 pb-2 text-zinc-500 text-xs leading-relaxed max-w-sm">
+                        End-to-end studio or lifestyle production, handling everything from casting and styling to
+                        high-end post-production rollout.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Management Services Section -->
+    <section class="flex flex-col md:flex-row border-t border-zinc-100 min-h-[90vh]">
+        <div class="w-full md:w-1/2 flex flex-col justify-center px-10 md:px-24 py-20 order-2 md:order-1">
+            <h3 class="text-3xl md:text-5xl font-light mb-8">
+                <span class="font-serif italic lowercase"
+                    style="font-family: 'Playfair Display', serif;">management</span> Services
+            </h3>
+            <p class="text-zinc-500 text-sm md:text-base leading-relaxed mb-6 max-w-md">
+                Our content management service takes full ownership of your brand's monthly content output—strategy,
+                execution, and production coordination, all in one place. Whether you're looking for a hands-on partner
+                or a seamless handoff, we bring the structure, creative direction, and consistency needed to keep your
+                content aligned, elevated, and always on-brand.
+            </p>
+            <p class="text-zinc-400 text-[10px] italic tracking-wide mb-10">By application only to ensure partnership
+                alignment. Limited onboarding openings.</p>
+
+            <!-- Management Accordion -->
+            <div class="space-y-4 border-t border-zinc-100 pt-8 mb-12">
+                <div class="accordion-item border-b border-zinc-100 pb-4">
+                    <button
+                        class="w-full flex justify-between items-center text-left hover:text-zinc-400 transition-colors py-2"
+                        onclick="toggleAccordion(this)">
+                        <span class="text-xs uppercase tracking-[0.2em]">01. Content Management (Two Options
+                            Available)</span>
+                        <span class="text-lg font-light leading-none">+</span>
+                    </button>
+                    <div class="accordion-content hidden pt-4 pb-2 text-zinc-500 text-xs leading-relaxed max-w-sm">
+                        Total ownership of your brand's monthly content output. We handle the bridge between strategy
+                        and execution, ensuring high-quality consistency across all channels.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inquiry Form (Always Visible) -->
+            <div class="pt-4">
+                <h4 class="text-[10px] uppercase tracking-[0.2em] font-semibold mb-8">Apply for Partnership</h4>
+                <form id="inquiry-form" class="space-y-8 animate-fadeIn">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-[10px] text-zinc-400 uppercase tracking-widest">Name</label>
+                            <input type="text" placeholder="First Name (required)"
+                                class="w-full bg-[#F5F5F3] px-6 py-4 text-xs focus:outline-none">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] invisible uppercase tracking-widest">Last Name</label>
+                            <input type="text" placeholder="Last Name (required)"
+                                class="w-full bg-[#F5F5F3] px-6 py-4 text-xs focus:outline-none">
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] text-zinc-400 uppercase tracking-widest">Email (required)</label>
+                        <input type="email" placeholder=""
+                            class="w-full bg-[#F5F5F3] px-6 py-4 text-xs focus:outline-none">
+                    </div>
+                    <div class="flex items-center space-x-3 py-2">
+                        <input type="checkbox" id="signup" class="rounded-none border-zinc-300 focus:ring-0">
+                        <label for="signup" class="text-xs text-zinc-500">Sign up for news and updates</label>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] text-zinc-400 uppercase tracking-widest">Brand Instagram
+                            (required)</label>
+                        <input type="text" placeholder="@username"
+                            class="w-full bg-[#F5F5F3] px-6 py-4 text-xs focus:outline-none border-b border-zinc-100">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] text-zinc-400 uppercase tracking-widest">Target Start Date
+                            (required)</label>
+                        <input type="date"
+                            class="w-full bg-transparent px-6 py-4 text-xs focus:outline-none border border-zinc-100">
+                    </div>
+                    <button type="submit"
+                        class="bg-black text-white px-10 py-4 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-colors">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="w-full md:w-1/2 h-[50vh] md:h-auto overflow-hidden order-1 md:order-2">
+            <img src="/Users/etosegun/.gemini/antigravity/brain/6513c066-1862-4467-a759-1047d3d69d8e/consulting_services_image_1769467629013.png"
+                alt="Management Services" class="w-full h-full object-cover">
+        </div>
+    </section>
+
+    <script>
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('span:last-child');
+
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.textContent = '−';
+            } else {
+                content.classList.add('hidden');
+                icon.textContent = '+';
+            }
+        }
+
+        function toggleForm() {
+            const form = document.getElementById('inquiry-form');
+            const icon = document.getElementById('form-toggle-icon');
+
+            if (form.classList.contains('hidden')) {
+                form.classList.remove('hidden');
+                icon.textContent = '−';
+            } else {
+                form.classList.add('hidden');
+                icon.textContent = '+';
+            }
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer id="contact" class="py-24 px-6 md:px-12 border-t border-zinc-100">
+        <div class="max-w-screen-2xl mx-auto flex flex-col items-center">
+            <!-- CTA Button -->
+            <div class="mb-8">
+                <a href="contact.html"
+                    class="bg-black text-white px-12 py-5 rounded-full text-[11px] font-semibold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-all transform hover:scale-105">
+                    Book Your Next Shoot
+                </a>
+            </div>
+
+            <!-- Instagram Handle -->
+            <div class="mb-16">
+                <a href="#"
+                    class="text-[11px] tracking-[0.15em] text-zinc-500 lowercase hover:text-black transition-colors">@realinfluence.house</a>
+            </div>
+
+            <!-- Instagram Feed Grid -->
+            <div class="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-1 mb-24">
+                <div class="aspect-square bg-zinc-50 overflow-hidden relative group cursor-pointer">
+                    <img src="/Users/etosegun/.gemini/antigravity/brain/6513c066-1862-4467-a759-1047d3d69d8e/instagram_feed_1_fashion_editorial_1769468179782.png"
+                        alt="Instagram Post"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="aspect-square bg-zinc-50 overflow-hidden relative group cursor-pointer">
+                    <img src="/Users/etosegun/.gemini/antigravity/brain/6513c066-1862-4467-a759-1047d3d69d8e/instagram_feed_2_vibrant_red_1769468192160.png"
+                        alt="Instagram Post"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <!-- Play Icon Overlay -->
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <svg class="w-10 h-10 text-white opacity-90" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.333-5.89a1.5 1.5 0 000-2.538L6.3 2.84z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="aspect-square bg-zinc-50 overflow-hidden relative group cursor-pointer">
+                    <img src="/Users/etosegun/.gemini/antigravity/brain/6513c066-1862-4467-a759-1047d3d69d8e/instagram_feed_3_studio_muse_pose_1769468204317.png"
+                        alt="Instagram Post"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="aspect-square bg-zinc-50 overflow-hidden relative group cursor-pointer">
+                    <img src="/Users/etosegun/.gemini/antigravity/brain/6513c066-1862-4467-a759-1047d3d69d8e/content_services_image_1769467613294.png"
+                        alt="Instagram Post"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="aspect-square bg-zinc-50 overflow-hidden relative group cursor-pointer">
+                    <img src="/Users/etosegun/.gemini/antigravity/brain/6513c066-1862-4467-a759-1047d3d69d8e/consulting_services_image_1769467629013.png"
+                        alt="Instagram Post"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <!-- Play Icon Overlay -->
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <svg class="w-10 h-10 text-white opacity-90" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.333-5.89a1.5 1.5 0 000-2.538L6.3 2.84z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="aspect-square bg-zinc-50 overflow-hidden relative group cursor-pointer">
+                    <img src="/Users/etosegun/.gemini/antigravity/brain/6513c066-1862-4467-a759-1047d3d69d8e/management_services_image_1769467641802.png"
+                        alt="Instagram Post"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <!-- Play Icon Overlay -->
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <svg class="w-10 h-10 text-white opacity-90" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.333-5.89a1.5 1.5 0 000-2.538L6.3 2.84z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="w-full max-w-xl text-center mb-24">
+                <p class="text-xs tracking-[0.05em] text-zinc-600 mb-8">Sign up with your email address to receive news
+                    and updates.</p>
+                <form class="flex flex-col md:row items-stretch gap-2">
+                    <input type="email" placeholder=""
+                        class="flex-grow bg-[#F5F5F3] px-6 py-4 text-sm focus:outline-none placeholder-zinc-400">
+                    <button type="submit"
+                        class="bg-black text-white px-10 py-4 text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-colors">Sign
+                        Up</button>
+                </form>
+            </div>
+
+            <!-- Social Links & Branding -->
+            <div class="w-full flex flex-col items-center space-y-12 mb-16">
+                <div class="flex space-x-8 text-[11px] uppercase tracking-[0.2em] font-medium text-zinc-500">
+                    <a href="#" class="hover:text-black transition-colors">Instagram</a>
+                    <a href="#" class="hover:text-black transition-colors">Pinterest</a>
+                </div>
+
+                <div class="text-center">
+                    <h2 class="branding-font text-2xl md:text-3xl tracking-[0.15em] font-bold uppercase mb-2">Real
+                        Influence House</h2>
+                    <p class="text-[9px] tracking-[0.1em] text-zinc-400 uppercase">Fashion Marketing Agency — Montreal &
+                        NYC</p>
+                </div>
+            </div>
+
+            <!-- Copyright Footer -->
+            <div
+                class="w-full pt-12 border-t border-zinc-100 flex flex-col md:row justify-between items-center text-[10px] text-zinc-400 uppercase tracking-[0.15em]">
+                <div>Real Influence House © 2026</div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
