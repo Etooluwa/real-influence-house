@@ -75,6 +75,20 @@
             color: #fff;
             border-color: #000;
         }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-marquee {
+            animation: marquee 10s linear infinite;
+        }
     </style>
 </head>
 
@@ -212,6 +226,18 @@
                     </button>
                 </div>
             </form>
+        </div>
+    </section>
+
+    <!-- Large Text Marquee / CTA -->
+    <section class="py-20 overflow-hidden border-y border-zinc-200">
+        <div class="whitespace-nowrap flex animate-marquee">
+            <div class="serif text-7xl md:text-9xl italic font-light px-4 opacity-10 uppercase tracking-tighter">
+                Creative Direction • Management • Editorial Strategy • Digital Rollout •
+            </div>
+            <div class="serif text-7xl md:text-9xl italic font-light px-4 opacity-10 uppercase tracking-tighter">
+                Creative Direction • Management • Editorial Strategy • Digital Rollout •
+            </div>
         </div>
     </section>
 
