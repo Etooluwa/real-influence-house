@@ -11,6 +11,32 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
+    <!-- Google Calendar Appointment Scheduling begin -->
+    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+    <script>
+        (function () {
+            var target = document.currentScript;
+            window.addEventListener('load', function () {
+                calendar.schedulingButton.load({
+                    url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3s0gfd9TKjmw0_4LlHyowIWUfh3qeZae0YtaTzkf4mtAXv5x2K4Np1mfEUgR2VniEu3Zj_ioXH?gv=true',
+                    color: '#039BE5',
+                    label: 'Free consultation',
+                    target,
+                });
+
+                // Custom script to trigger popup from existing buttons
+                document.querySelectorAll('.consultation-trigger').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const scheduleBtn = document.querySelector('.google-calendar-scheduling-button');
+                        if (scheduleBtn) scheduleBtn.click();
+                    });
+                });
+            });
+        })();
+    </script>
+    <!-- end Google Calendar Appointment Scheduling -->
     <style>
         :root {
             --bg-cream: #F9F7F2;
@@ -245,9 +271,10 @@
             <!-- CTA Button -->
             <div class="mb-8">
                 <a href="https://calendar.app.google/S2SS8npWgh8eRufd7"
-                    class="bg-black text-white px-12 py-5 rounded-full text-[11px] font-semibold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-all transform hover:scale-105">
+                    class="bg-black text-white px-12 py-5 rounded-full text-[11px] font-semibold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-all transform hover:scale-105 consultation-trigger">
                     Free consultation
                 </a>
+                <div class="google-calendar-scheduling-button hidden"></div>
             </div>
 
             <!-- Instagram Handle -->
