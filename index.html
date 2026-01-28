@@ -264,13 +264,46 @@
                         workshops on mastering personal branding, public relations, and turning influence into
                         opportunity. Stay tuned for updates and secure your chance to learn from the best.
                     </p>
-                    <a href="services.html"
-                        class="text-[10px] uppercase tracking-[0.3em] font-medium border-b border-black pb-1 w-max hover:opacity-50 transition-opacity">Learn
-                        More</a>
+                    <button onclick="openConferenceModal()"
+                        class="bg-black text-white px-8 py-4 rounded-full text-[10px] font-semibold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-all transform hover:scale-105">
+                        Be the First to Know
+                    </button>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Conference Interest Modal -->
+    <div id="conference-modal" class="fixed inset-0 bg-black/50 z-50 hidden items-center justify-center p-6">
+        <div class="bg-white rounded-2xl max-w-md w-full p-10 relative shadow-2xl">
+            <button onclick="closeConferenceModal()"
+                class="absolute top-4 right-4 text-zinc-400 hover:text-black transition-colors text-2xl">&times;</button>
+            <h3 class="text-2xl font-light mb-2">
+                <span class="font-serif italic" style="font-family: 'Playfair Display', serif;">the art of
+                    influence</span> Conference
+            </h3>
+            <p class="text-zinc-500 text-sm mb-8">Be the first to know when tickets are available.</p>
+            <form id="conference-form" class="space-y-6">
+                <div>
+                    <label class="text-[10px] text-zinc-400 uppercase tracking-widest block mb-2">Full Name</label>
+                    <input type="text" name="fullName" id="conf-name" required placeholder="Your name"
+                        class="w-full border-b border-zinc-200 py-3 text-sm focus:outline-none focus:border-black transition-colors bg-transparent">
+                </div>
+                <div>
+                    <label class="text-[10px] text-zinc-400 uppercase tracking-widest block mb-2">Email Address</label>
+                    <input type="email" name="email" id="conf-email" required placeholder="your@email.com"
+                        class="w-full border-b border-zinc-200 py-3 text-sm focus:outline-none focus:border-black transition-colors bg-transparent">
+                </div>
+                <div class="pt-4">
+                    <button type="submit" id="conf-submit-btn"
+                        class="w-full bg-black text-white py-4 rounded-full text-[11px] font-semibold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+                        Notify Me
+                    </button>
+                    <p id="conf-status" class="mt-4 text-xs tracking-widest text-center hidden"></p>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <!-- Recent Projects Section -->
     <section id="portfolio" class="pt-20 md:pt-32 pb-8 overflow-hidden">
@@ -432,6 +465,79 @@
             }
         }
     </style>
+
+    <script>
+        // Conference Modal Functions
+        function openConferenceModal() {
+            const modal = document.getElementById('conference-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeConferenceModal() {
+            const modal = document.getElementById('conference-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+            document.getElementById('conf-status').classList.add('hidden');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('conference-modal').addEventListener('click', function (e) {
+            if (e.target === this) closeConferenceModal();
+        });
+
+        // Conference Form Submission
+        document.getElementById('conference-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('conf-submit-btn');
+            const statusMsg = document.getElementById('conf-status');
+            const originalBtnText = submitBtn.innerText;
+
+            submitBtn.innerText = 'SENDING...';
+            submitBtn.disabled = true;
+            statusMsg.classList.add('hidden');
+            statusMsg.classList.remove('text-red-500', 'text-green-500');
+
+            const fullName = document.getElementById('conf-name').value;
+            const email = document.getElementById('conf-email').value;
+
+            try {
+                const isLocal = window.location.hostname === 'localhost' ||
+                    window.location.hostname === '127.0.0.1' ||
+                    window.location.protocol === 'file:';
+                const apiUrl = isLocal ? 'http://localhost:3000/api/conference-signup' : '/api/conference-signup';
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ fullName, email })
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    statusMsg.innerText = "YOU'RE ON THE LIST! WE'LL BE IN TOUCH.";
+                    statusMsg.classList.add('text-green-500');
+                    statusMsg.classList.remove('hidden');
+                    this.reset();
+                    setTimeout(() => closeConferenceModal(), 3000);
+                } else {
+                    throw new Error(result.error || 'Failed to submit');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                statusMsg.innerText = 'ERROR. PLEASE TRY AGAIN.';
+                statusMsg.classList.add('text-red-500');
+                statusMsg.classList.remove('hidden');
+            } finally {
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
 </body>
 
 </html>
