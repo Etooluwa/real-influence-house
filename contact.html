@@ -170,36 +170,36 @@
                     us</span>
             </h2>
 
-            <form class="space-y-10">
+            <form id="contact-form" class="space-y-10">
                 <div class="grid grid-cols-2 gap-8">
                     <div class="space-y-3">
                         <label class="text-[10px] text-zinc-400 uppercase tracking-widest block">Name</label>
-                        <input type="text" placeholder="First Name (required)"
+                        <input type="text" name="firstName" id="firstName" placeholder="First Name (required)" required
                             class="w-full border-b border-zinc-200 py-3 text-sm focus:outline-none focus:border-black transition-colors bg-transparent">
                     </div>
                     <div class="space-y-3">
                         <label class="text-[10px] invisible uppercase tracking-widest block">Last Name</label>
-                        <input type="text" placeholder="Last Name (required)"
+                        <input type="text" name="lastName" id="lastName" placeholder="Last Name (required)" required
                             class="w-full border-b border-zinc-200 py-3 text-sm focus:outline-none focus:border-black transition-colors bg-transparent">
                     </div>
                 </div>
 
                 <div class="space-y-3">
                     <label class="text-[10px] text-zinc-400 uppercase tracking-widest block">Email (required)</label>
-                    <input type="email" placeholder=""
+                    <input type="email" name="email" id="email" placeholder="" required
                         class="w-full border-b border-zinc-200 py-3 text-sm focus:outline-none focus:border-black transition-colors bg-transparent">
                 </div>
 
                 <div class="space-y-3">
                     <label class="text-[10px] text-zinc-400 uppercase tracking-widest block">Social Media
                         Platform</label>
-                    <input type="text" placeholder="@username"
+                    <input type="text" name="social" id="social" placeholder="@username"
                         class="w-full border-b border-zinc-200 py-3 text-sm focus:outline-none focus:border-black transition-colors bg-transparent">
                 </div>
 
                 <div class="space-y-3">
                     <label class="text-[10px] text-zinc-400 uppercase tracking-widest block">Website</label>
-                    <input type="url" placeholder="http://"
+                    <input type="url" name="website" id="website" placeholder="http://"
                         class="w-full border-b border-zinc-200 py-3 text-sm focus:outline-none focus:border-black transition-colors bg-transparent">
                 </div>
 
@@ -208,19 +208,22 @@
                         (required)</label>
                     <div class="flex flex-wrap gap-3">
                         <div class="service-chip">
-                            <input type="checkbox" id="consulting" class="hidden">
+                            <input type="checkbox" name="services" value="Consulting Services" id="consulting"
+                                class="hidden">
                             <label for="consulting"
                                 class="px-6 py-2 border border-zinc-200 text-[10px] uppercase tracking-widest cursor-pointer hover:border-black transition-all">Consulting
                                 Services</label>
                         </div>
                         <div class="service-chip">
-                            <input type="checkbox" id="products" class="hidden">
+                            <input type="checkbox" name="services" value="Digital Products" id="products"
+                                class="hidden">
                             <label for="products"
                                 class="px-6 py-2 border border-zinc-200 text-[10px] uppercase tracking-widest cursor-pointer hover:border-black transition-all">Digital
                                 Products</label>
                         </div>
                         <div class="service-chip">
-                            <input type="checkbox" id="conference" class="hidden">
+                            <input type="checkbox" name="services" value="The Art Of Influence Conference"
+                                id="conference" class="hidden">
                             <label for="conference"
                                 class="px-6 py-2 border border-zinc-200 text-[10px] uppercase tracking-widest cursor-pointer hover:border-black transition-all">The
                                 Art Of Influence Conference</label>
@@ -231,15 +234,16 @@
                 <div class="space-y-3">
                     <label class="text-[10px] text-zinc-400 uppercase tracking-widest block">Any Additional Info You'd
                         Like To Share?</label>
-                    <textarea rows="4"
+                    <textarea rows="4" name="message" id="message"
                         class="w-full border-b border-zinc-200 py-3 text-sm focus:outline-none focus:border-black transition-colors bg-transparent resize-none"></textarea>
                 </div>
 
                 <div class="pt-6 text-center">
-                    <button type="submit"
-                        class="bg-black text-white px-12 py-5 rounded-full text-[11px] font-semibold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-all transform hover:scale-105 active:scale-95">
+                    <button type="submit" id="submit-btn"
+                        class="bg-black text-white px-12 py-5 rounded-full text-[11px] font-semibold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-all transform hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed">
                         Send Message
                     </button>
+                    <p id="form-status" class="mt-4 text-xs tracking-widest hidden"></p>
                 </div>
             </form>
         </div>
@@ -299,6 +303,64 @@
         </div>
     </footer>
 
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('submit-btn');
+            const statusMsg = document.getElementById('form-status');
+            const originalBtnText = submitBtn.innerText;
+
+            submitBtn.innerText = 'SENDING...';
+            submitBtn.disabled = true;
+            statusMsg.classList.add('hidden');
+            statusMsg.classList.remove('text-red-500', 'text-green-500');
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            // Handle multiple checkboxes for 'services'
+            const services = formData.getAll('services');
+            data.services = services;
+
+            try {
+                // Determine the API URL based on environment.
+                // If running on localhost or via file protocol, use the local server port 3000.
+                const isLocal = window.location.hostname === 'localhost' ||
+                    window.location.hostname === '127.0.0.1' ||
+                    window.location.protocol === 'file:';
+
+                const apiUrl = isLocal ? 'http://localhost:3000/api/send' : '/api/send';
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    statusMsg.innerText = 'MESSAGE SENT SUCCESSFULLY. WE WILL BE IN TOUCH SOON.';
+                    statusMsg.classList.add('text-green-500');
+                    statusMsg.classList.remove('hidden');
+                    this.reset();
+                } else {
+                    throw new Error(result.error || 'Failed to send message');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                statusMsg.innerText = 'ERROR SENDING MESSAGE. PLEASE TRY AGAIN OR EMAIL US DIRECTLY.';
+                statusMsg.classList.add('text-red-500');
+                statusMsg.classList.remove('hidden');
+            } finally {
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
 </body>
 
 </html>
