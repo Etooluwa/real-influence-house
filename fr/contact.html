@@ -1,43 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="fr" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | The Real Influence House</title>
-    <link rel="icon" type="image/jpeg" href="assets/images/primary.jpeg">
+    <link rel="icon" type="image/jpeg" href="../assets/images/primary.jpeg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
-    <!-- Google Calendar Appointment Scheduling begin -->
-    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-    <script>
-        (function () {
-            var target = document.currentScript;
-            window.addEventListener('load', function () {
-                calendar.schedulingButton.load({
-                    url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3s0gfd9TKjmw0_4LlHyowIWUfh3qeZae0YtaTzkf4mtAXv5x2K4Np1mfEUgR2VniEu3Zj_ioXH?gv=true',
-                    color: '#039BE5',
-                    label: 'Free consultation',
-                    target,
-                });
-
-                // Custom script to trigger popup from existing buttons
-                document.querySelectorAll('.consultation-trigger').forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        const scheduleBtn = document.querySelector('.google-calendar-scheduling-button');
-                        if (scheduleBtn) scheduleBtn.click();
-                    });
-                });
-            });
-        })();
-    </script>
-    <!-- end Google Calendar Appointment Scheduling -->
     <style>
         :root {
             --bg-cream: #F9F7F2;
@@ -50,8 +24,6 @@
             background-color: var(--bg-cream);
             color: var(--text-dark);
             overflow-x: hidden;
-            margin: 0;
-            padding: 0;
         }
 
         .serif {
@@ -64,27 +36,6 @@
             letter-spacing: 0.05em;
         }
 
-        .nav-link {
-            position: relative;
-            transition: opacity 0.3s ease;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: -2px;
-            left: 0;
-            background-color: var(--text-dark);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* Custom scrollbar for premium feel */
         ::-webkit-scrollbar {
             width: 6px;
         }
@@ -131,16 +82,14 @@
     <!-- Navigation -->
     <header class="w-full bg-transparent px-6 md:px-12 py-6 md:py-12">
         <div class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center">
-            <!-- Left: Nav Links -->
             <nav
                 class="flex flex-nowrap justify-center md:justify-start gap-x-3 md:gap-x-6 text-[9px] md:text-[11px] uppercase tracking-[0.1em] md:tracking-[0.2em] font-medium text-zinc-500 whitespace-nowrap mb-6 md:mb-0">
-                <a href="index.html" class="hover:text-black transition-colors">○ Home</a>
-                <a href="services.html" class="hover:text-black transition-colors">○ What We Do</a>
-                <a href="about.html" class="hover:text-black transition-colors">○ About Us</a>
+                <a href="index.html" class="hover:text-black transition-colors">○ Accueil</a>
+                <a href="services.html" class="hover:text-black transition-colors">○ Nos Services</a>
+                <a href="about.html" class="hover:text-black transition-colors">○ À Propos</a>
                 <a href="contact.html" class="text-black font-bold transition-colors md:hidden">● Contact</a>
             </nav>
 
-            <!-- Center: Logo & Tagline -->
             <div class="text-center w-full md:min-w-max">
                 <a href="index.html" class="block hover:opacity-70 transition-opacity">
                     <h1
@@ -149,85 +98,80 @@
                 </a>
             </div>
 
-            <!-- Right: Language Toggle & Contact -->
             <div
                 class="hidden md:flex justify-end items-center gap-x-4 text-[11px] uppercase tracking-[0.2em] font-medium text-black">
-                <a href="fr/contact.html"
-                    class="hover:text-black transition-colors border border-zinc-300 px-2 py-1 rounded text-[10px] text-zinc-500">FR</a>
+                <a href="../contact.html"
+                    class="hover:text-black transition-colors border border-zinc-300 px-2 py-1 rounded text-[10px] text-zinc-500">EN</a>
                 <a href="contact.html" class="transition-colors font-bold">● Contact</a>
             </div>
         </div>
-        <!-- Mobile Language Toggle -->
         <div class="md:hidden text-center mt-4">
-            <a href="fr/contact.html"
-                class="text-[10px] uppercase tracking-[0.2em] font-medium text-zinc-500 hover:text-black transition-colors border border-zinc-300 px-3 py-1 rounded">Français</a>
+            <a href="../contact.html"
+                class="text-[10px] uppercase tracking-[0.2em] font-medium text-zinc-500 hover:text-black transition-colors border border-zinc-300 px-3 py-1 rounded">English</a>
         </div>
     </header>
 
     <!-- Contact Section -->
     <section class="flex flex-col md:flex-row min-h-screen border-t border-zinc-100">
-        <!-- Left: Image -->
         <div class="w-full md:w-1/2 h-[50vh] md:h-auto overflow-hidden">
-            <img src="assets/images/img12.jpg" alt="Connect" class="w-full h-full object-cover">
+            <img src="../assets/images/img12.jpg" alt="Contact" class="w-full h-full object-cover">
         </div>
 
-        <!-- Right: Inquiry Form -->
         <div class="w-full md:w-1/2 flex flex-col justify-center px-10 md:px-24 py-20">
             <h2 class="text-3xl md:text-4xl font-light mb-12">
-                <span class="font-serif italic lowercase" style="font-family: 'Playfair Display', serif;">contact
-                    us</span>
+                <span class="font-serif italic lowercase"
+                    style="font-family: 'Playfair Display', serif;">contactez-nous</span>
             </h2>
 
             <form id="contact-form" class="space-y-10">
                 <div class="grid grid-cols-2 gap-8">
                     <div class="space-y-3">
-                        <label class="text-[10px] text-zinc-400 uppercase tracking-widest block">Name</label>
-                        <input type="text" name="firstName" id="firstName" placeholder="First Name (required)" required
+                        <label class="text-[10px] text-zinc-400 uppercase tracking-widest block">Nom</label>
+                        <input type="text" name="firstName" id="firstName" placeholder="Prénom (requis)" required
                             class="w-full border-b border-zinc-200 py-3 text-sm focus:outline-none focus:border-black transition-colors bg-transparent">
                     </div>
                     <div class="space-y-3">
-                        <label class="text-[10px] invisible uppercase tracking-widest block">Last Name</label>
-                        <input type="text" name="lastName" id="lastName" placeholder="Last Name (required)" required
+                        <label class="text-[10px] invisible uppercase tracking-widest block">Nom de Famille</label>
+                        <input type="text" name="lastName" id="lastName" placeholder="Nom de famille (requis)" required
                             class="w-full border-b border-zinc-200 py-3 text-sm focus:outline-none focus:border-black transition-colors bg-transparent">
                     </div>
                 </div>
 
                 <div class="space-y-3">
-                    <label class="text-[10px] text-zinc-400 uppercase tracking-widest block">Email (required)</label>
+                    <label class="text-[10px] text-zinc-400 uppercase tracking-widest block">Email (requis)</label>
                     <input type="email" name="email" id="email" placeholder="" required
                         class="w-full border-b border-zinc-200 py-3 text-sm focus:outline-none focus:border-black transition-colors bg-transparent">
                 </div>
 
                 <div class="space-y-3">
-                    <label class="text-[10px] text-zinc-400 uppercase tracking-widest block">Social Media
-                        Platform</label>
-                    <input type="text" name="social" id="social" placeholder="@username"
+                    <label class="text-[10px] text-zinc-400 uppercase tracking-widest block">Réseaux Sociaux</label>
+                    <input type="text" name="social" id="social" placeholder="@pseudo"
                         class="w-full border-b border-zinc-200 py-3 text-sm focus:outline-none focus:border-black transition-colors bg-transparent">
                 </div>
 
                 <div class="space-y-3">
-                    <label class="text-[10px] text-zinc-400 uppercase tracking-widest block">Website</label>
+                    <label class="text-[10px] text-zinc-400 uppercase tracking-widest block">Site Web</label>
                     <input type="url" name="website" id="website" placeholder="http://"
                         class="w-full border-b border-zinc-200 py-3 text-sm focus:outline-none focus:border-black transition-colors bg-transparent">
                 </div>
 
                 <div class="space-y-6">
-                    <label class="text-[10px] text-zinc-400 uppercase tracking-widest block">Services Of Interest
-                        (required)</label>
+                    <label class="text-[10px] text-zinc-400 uppercase tracking-widest block">Services d'Intérêt
+                        (requis)</label>
                     <div class="flex flex-wrap gap-3">
                         <div class="service-chip">
-                            <input type="checkbox" name="services" value="Consulting Services" id="consulting"
+                            <input type="checkbox" name="services" value="Services de Consulting" id="consulting"
                                 class="hidden">
                             <label for="consulting"
-                                class="px-6 py-2 border border-zinc-200 text-[10px] uppercase tracking-widest cursor-pointer hover:border-black transition-all">Consulting
-                                Services</label>
+                                class="px-6 py-2 border border-zinc-200 text-[10px] uppercase tracking-widest cursor-pointer hover:border-black transition-all">Services
+                                de Consulting</label>
                         </div>
                         <div class="service-chip">
-                            <input type="checkbox" name="services" value="Digital Products" id="products"
+                            <input type="checkbox" name="services" value="Produits Numériques" id="products"
                                 class="hidden">
                             <label for="products"
-                                class="px-6 py-2 border border-zinc-200 text-[10px] uppercase tracking-widest cursor-pointer hover:border-black transition-all">Digital
-                                Products</label>
+                                class="px-6 py-2 border border-zinc-200 text-[10px] uppercase tracking-widest cursor-pointer hover:border-black transition-all">Produits
+                                Numériques</label>
                         </div>
                         <div class="service-chip">
                             <input type="checkbox" name="services" value="The Art Of Influence Conference"
@@ -240,8 +184,8 @@
                 </div>
 
                 <div class="space-y-3">
-                    <label class="text-[10px] text-zinc-400 uppercase tracking-widest block">Any Additional Info You'd
-                        Like To Share?</label>
+                    <label class="text-[10px] text-zinc-400 uppercase tracking-widest block">Des informations
+                        supplémentaires à partager ?</label>
                     <textarea rows="4" name="message" id="message"
                         class="w-full border-b border-zinc-200 py-3 text-sm focus:outline-none focus:border-black transition-colors bg-transparent resize-none"></textarea>
                 </div>
@@ -249,7 +193,7 @@
                 <div class="pt-6 text-center">
                     <button type="submit" id="submit-btn"
                         class="bg-black text-white px-12 py-5 rounded-full text-[11px] font-semibold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-all transform hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed">
-                        Send Message
+                        Envoyer le Message
                     </button>
                     <p id="form-status" class="mt-4 text-xs tracking-widest hidden"></p>
                 </div>
@@ -257,16 +201,18 @@
         </div>
     </section>
 
-    <!-- Large Text Marquee / CTA -->
+    <!-- Large Text Marquee -->
     <section class="py-10 overflow-hidden border-y border-zinc-200">
         <div class="whitespace-nowrap flex animate-marquee">
             <div class="serif text-2xl md:text-4xl italic font-light px-4 text-black uppercase tracking-tighter">
-                Personal Brand - Public Relations - Influence Opportunity - Personal Brand - Public Relations -
-                Influence Opportunity -
+                Marque Personnelle - Relations Publiques - Opportunité d'Influence - Marque Personnelle - Relations
+                Publiques -
+                Opportunité d'Influence -
             </div>
             <div class="serif text-2xl md:text-4xl italic font-light px-4 text-black uppercase tracking-tighter">
-                Personal Brand - Public Relations - Influence Opportunity - Personal Brand - Public Relations -
-                Influence Opportunity -
+                Marque Personnelle - Relations Publiques - Opportunité d'Influence - Marque Personnelle - Relations
+                Publiques -
+                Opportunité d'Influence -
             </div>
         </div>
     </section>
@@ -274,7 +220,6 @@
     <!-- Footer -->
     <footer id="contact" class="pt-12 pb-24 px-6 md:px-12 border-t border-zinc-100">
         <div class="max-w-screen-2xl mx-auto flex flex-col items-center">
-            <!-- Social Links & Branding -->
             <div class="w-full flex flex-col items-center space-y-12 mb-16">
                 <div
                     class="flex flex-wrap justify-center gap-x-6 gap-y-4 md:gap-x-8 text-[11px] uppercase tracking-[0.2em] font-medium text-zinc-500">
@@ -296,14 +241,14 @@
                     </a>
                 </div>
                 <nav class="flex justify-center flex-wrap gap-8 text-[11px] uppercase tracking-[0.2em] font-medium">
-                    <a href="index.html" class="hover:opacity-50 transition-opacity whitespace-nowrap">Home</a>
-                    <a href="services.html" class="hover:opacity-50 transition-opacity whitespace-nowrap">What We Do</a>
-                    <a href="about.html" class="hover:opacity-50 transition-opacity whitespace-nowrap">About Us</a>
+                    <a href="index.html" class="hover:opacity-50 transition-opacity whitespace-nowrap">Accueil</a>
+                    <a href="services.html" class="hover:opacity-50 transition-opacity whitespace-nowrap">Nos
+                        Services</a>
+                    <a href="about.html" class="hover:opacity-50 transition-opacity whitespace-nowrap">À Propos</a>
                     <a href="contact.html" class="hover:opacity-50 transition-opacity whitespace-nowrap">Contact</a>
                 </nav>
             </div>
 
-            <!-- Copyright Footer -->
             <div
                 class="w-full pt-12 border-t border-zinc-100 flex flex-col md:row justify-between items-center text-[10px] text-zinc-400 uppercase tracking-[0.15em]">
                 <div>The Real Influence House © 2026</div>
@@ -319,7 +264,7 @@
             const statusMsg = document.getElementById('form-status');
             const originalBtnText = submitBtn.innerText;
 
-            submitBtn.innerText = 'SENDING...';
+            submitBtn.innerText = 'ENVOI...';
             submitBtn.disabled = true;
             statusMsg.classList.add('hidden');
             statusMsg.classList.remove('text-red-500', 'text-green-500');
@@ -327,13 +272,10 @@
             const formData = new FormData(this);
             const data = Object.fromEntries(formData.entries());
 
-            // Handle multiple checkboxes for 'services'
             const services = formData.getAll('services');
             data.services = services;
 
             try {
-                // Determine the API URL based on environment.
-                // If running on localhost or via file protocol, use the local server port 3000.
                 const isLocal = window.location.hostname === 'localhost' ||
                     window.location.hostname === '127.0.0.1' ||
                     window.location.protocol === 'file:';
@@ -351,16 +293,16 @@
                 const result = await response.json();
 
                 if (response.ok) {
-                    statusMsg.innerText = 'MESSAGE SENT SUCCESSFULLY. WE WILL BE IN TOUCH SOON.';
+                    statusMsg.innerText = 'MESSAGE ENVOYÉ AVEC SUCCÈS. NOUS VOUS CONTACTERONS BIENTÔT.';
                     statusMsg.classList.add('text-green-500');
                     statusMsg.classList.remove('hidden');
                     this.reset();
                 } else {
-                    throw new Error(result.error || 'Failed to send message');
+                    throw new Error(result.error || 'Échec de l\'envoi');
                 }
             } catch (error) {
                 console.error('Error:', error);
-                statusMsg.innerText = 'ERROR SENDING MESSAGE. PLEASE TRY AGAIN OR EMAIL US DIRECTLY.';
+                statusMsg.innerText = 'ERREUR LORS DE L\'ENVOI. VEUILLEZ RÉESSAYER OU NOUS CONTACTER DIRECTEMENT.';
                 statusMsg.classList.add('text-red-500');
                 statusMsg.classList.remove('hidden');
             } finally {

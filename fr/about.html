@@ -1,43 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="fr" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | The Real Influence House</title>
-    <link rel="icon" type="image/jpeg" href="assets/images/primary.jpeg">
+    <title>À Propos | The Real Influence House</title>
+    <link rel="icon" type="image/jpeg" href="../assets/images/primary.jpeg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
-    <!-- Google Calendar Appointment Scheduling begin -->
-    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-    <script>
-        (function () {
-            var target = document.currentScript;
-            window.addEventListener('load', function () {
-                calendar.schedulingButton.load({
-                    url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3s0gfd9TKjmw0_4LlHyowIWUfh3qeZae0YtaTzkf4mtAXv5x2K4Np1mfEUgR2VniEu3Zj_ioXH?gv=true',
-                    color: '#039BE5',
-                    label: 'Free consultation',
-                    target,
-                });
-
-                // Custom script to trigger popup from existing buttons
-                document.querySelectorAll('.consultation-trigger').forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        const scheduleBtn = document.querySelector('.google-calendar-scheduling-button');
-                        if (scheduleBtn) scheduleBtn.click();
-                    });
-                });
-            });
-        })();
-    </script>
-    <!-- end Google Calendar Appointment Scheduling -->
     <style>
         :root {
             --bg-cream: #F9F7F2;
@@ -64,26 +38,6 @@
             letter-spacing: 0.05em;
         }
 
-        .nav-link {
-            position: relative;
-            transition: opacity 0.3s ease;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: -2px;
-            left: 0;
-            background-color: var(--text-dark);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -95,7 +49,6 @@
             transform: translateY(0);
         }
 
-        /* Custom scrollbar for premium feel */
         ::-webkit-scrollbar {
             width: 6px;
         }
@@ -139,9 +92,9 @@
             <!-- Left: Nav Links -->
             <nav
                 class="flex flex-nowrap justify-center md:justify-start gap-x-3 md:gap-x-6 text-[9px] md:text-[11px] uppercase tracking-[0.1em] md:tracking-[0.2em] font-medium text-zinc-500 whitespace-nowrap mb-6 md:mb-0">
-                <a href="index.html" class="hover:text-black transition-colors">○ Home</a>
-                <a href="services.html" class="hover:text-black transition-colors">○ What We Do</a>
-                <a href="about.html" class="text-black transition-colors font-bold">● About Us</a>
+                <a href="index.html" class="hover:text-black transition-colors">○ Accueil</a>
+                <a href="services.html" class="hover:text-black transition-colors">○ Nos Services</a>
+                <a href="about.html" class="text-black transition-colors font-bold">● À Propos</a>
                 <a href="contact.html" class="hover:text-black transition-colors md:hidden">○ Contact</a>
             </nav>
 
@@ -157,15 +110,15 @@
             <!-- Right: Language Toggle & Contact -->
             <div
                 class="hidden md:flex justify-end items-center gap-x-4 text-[11px] uppercase tracking-[0.2em] font-medium text-zinc-500">
-                <a href="fr/about.html"
-                    class="hover:text-black transition-colors border border-zinc-300 px-2 py-1 rounded text-[10px]">FR</a>
+                <a href="../about.html"
+                    class="hover:text-black transition-colors border border-zinc-300 px-2 py-1 rounded text-[10px]">EN</a>
                 <a href="contact.html" class="hover:text-black transition-colors">○ Contact</a>
             </div>
         </div>
         <!-- Mobile Language Toggle -->
         <div class="md:hidden text-center mt-4">
-            <a href="fr/about.html"
-                class="text-[10px] uppercase tracking-[0.2em] font-medium text-zinc-500 hover:text-black transition-colors border border-zinc-300 px-3 py-1 rounded">Français</a>
+            <a href="../about.html"
+                class="text-[10px] uppercase tracking-[0.2em] font-medium text-zinc-500 hover:text-black transition-colors border border-zinc-300 px-3 py-1 rounded">English</a>
         </div>
     </header>
 
@@ -173,7 +126,7 @@
     <section class="w-full px-6 md:px-12 py-12">
         <div class="max-w-4xl mx-auto flex justify-center">
             <div class="w-full md:w-4/5 overflow-hidden shadow-2xl">
-                <img src="assets/images/img10.jpg" alt="Aïcha and Idriss"
+                <img src="../assets/images/img10.jpg" alt="Aïcha et Idriss"
                     class="w-full h-auto object-contain transition-opacity duration-1000">
             </div>
         </div>
@@ -185,7 +138,7 @@
             <!-- Belief Statement -->
             <div class="text-center mb-24">
                 <h2 class="serif text-3xl md:text-5xl italic font-light leading-snug">
-                    We believe influence should be built with intention, clarity, and integrity.
+                    Nous croyons que l'influence doit être construite avec intention, clarté et intégrité.
                 </h2>
             </div>
 
@@ -195,13 +148,14 @@
                 <div class="fade-in">
                     <h3 class="serif text-2xl italic mb-6">Aïcha</h3>
                     <p class="text-zinc-600 text-sm md:text-base leading-relaxed">
-                        Aïcha has been a content creator for over a decade, building a personal brand that resonates
-                        across platforms. Through consistency, creativity, and strategic positioning, her work has led
-                        to meaningful visibility and life changing opportunities. Along the way, she has collaborated
-                        with major global brands including Sephora, Valentino, Gucci, Dolce & Gabbana, Burberry,
-                        Vaseline, Air Wick, Shoppers Drug Mart, international hotel chains, and many others. Today, she
-                        brings that lived experience to help others build personal brands that feel authentic, aligned,
-                        and sustainable.
+                        Aïcha est créatrice de contenu depuis plus d'une décennie, construisant une marque personnelle
+                        qui résonne sur toutes les plateformes. Grâce à la constance, la créativité et un positionnement
+                        stratégique, son travail a mené à une visibilité significative et des opportunités qui ont
+                        changé
+                        sa vie. En cours de route, elle a collaboré avec de grandes marques mondiales dont Sephora,
+                        Valentino, Gucci, Dolce & Gabbana, Burberry, Vaseline, Air Wick, Shoppers Drug Mart, des chaînes
+                        hôtelières internationales, et bien d'autres. Aujourd'hui, elle met cette expérience vécue au
+                        service des autres pour construire des marques personnelles authentiques, alignées et durables.
                     </p>
                 </div>
 
@@ -209,11 +163,12 @@
                 <div class="fade-in">
                     <h3 class="serif text-2xl italic mb-6">Idriss</h3>
                     <p class="text-zinc-600 text-sm md:text-base leading-relaxed">
-                        Idriss is a strategist with a sharp eye for clarity. With a background in management,
-                        leadership, coaching, and content creation, he helps transform vision into structure. He bridges
-                        the gap between ideas and execution, helping creators and leaders move with intention instead of
-                        noise. His strength lies in clarifying direction, identifying leverage points, and turning ideas
-                        into clear, executable strategies that support long term growth.
+                        Idriss est un stratège avec un œil aiguisé pour la clarté. Avec une formation en management,
+                        leadership, coaching et création de contenu, il aide à transformer la vision en structure. Il
+                        fait le pont entre les idées et l'exécution, aidant les créateurs et leaders à avancer avec
+                        intention plutôt que dans le bruit. Sa force réside dans la clarification de la direction,
+                        l'identification des points de levier et la transformation des idées en stratégies claires et
+                        exécutables qui soutiennent la croissance à long terme.
                     </p>
                 </div>
             </div>
@@ -221,8 +176,9 @@
             <!-- Mission Statement -->
             <div class="pt-16 border-t border-zinc-100 text-center">
                 <p class="serif text-xl md:text-2xl italic text-zinc-800 leading-relaxed max-w-3xl mx-auto">
-                    Together, we help individuals define their identity, communicate it with intention, and turn
-                    influence into aligned opportunities. Not by chasing trends, but by building brands that last.
+                    Ensemble, nous aidons les individus à définir leur identité, à la communiquer avec intention et à
+                    transformer leur influence en opportunités alignées. Non pas en suivant les tendances, mais en
+                    construisant des marques qui durent.
                 </p>
             </div>
         </div>
@@ -231,13 +187,12 @@
     <!-- CTA Section -->
     <section class="pt-0 pb-24 px-6 border-b border-zinc-100 text-center">
         <div class="max-w-2xl mx-auto">
-            <h2 class="serif text-3xl italic mb-10">Start your journey</h2>
+            <h2 class="serif text-3xl italic mb-10">Commencez votre parcours</h2>
             <div class="flex justify-center">
                 <a href="https://calendar.app.google/S2SS8npWgh8eRufd7" target="_blank" rel="noopener noreferrer"
                     class="bg-black text-white px-12 py-5 rounded-full text-[11px] font-semibold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-all transform hover:scale-105">
-                    Free consultation
+                    Consultation gratuite
                 </a>
-                <div class="google-calendar-scheduling-button hidden"></div>
             </div>
         </div>
     </section>
@@ -246,17 +201,17 @@
     <section class="py-10 overflow-hidden border-y border-zinc-200">
         <div class="whitespace-nowrap flex animate-marquee">
             <div class="serif text-2xl md:text-4xl italic font-light px-4 text-black uppercase tracking-tighter">
-                Personal Brand - Public Relations - Influence Opportunity - Personal Brand - Public Relations -
-                Influence Opportunity -
+                Marque Personnelle - Relations Publiques - Opportunité d'Influence - Marque Personnelle - Relations
+                Publiques -
+                Opportunité d'Influence -
             </div>
             <div class="serif text-2xl md:text-4xl italic font-light px-4 text-black uppercase tracking-tighter">
-                Personal Brand - Public Relations - Influence Opportunity - Personal Brand - Public Relations -
-                Influence Opportunity -
+                Marque Personnelle - Relations Publiques - Opportunité d'Influence - Marque Personnelle - Relations
+                Publiques -
+                Opportunité d'Influence -
             </div>
         </div>
     </section>
-
-
 
     <!-- Footer -->
     <footer id="contact" class="pt-12 pb-24 px-6 md:px-12">
@@ -282,9 +237,10 @@
                     </a>
                 </div>
                 <nav class="flex justify-center flex-wrap gap-8 text-[11px] uppercase tracking-[0.2em] font-medium">
-                    <a href="index.html" class="hover:opacity-50 transition-opacity whitespace-nowrap">Home</a>
-                    <a href="services.html" class="hover:opacity-50 transition-opacity whitespace-nowrap">What We Do</a>
-                    <a href="about.html" class="hover:opacity-50 transition-opacity whitespace-nowrap">About Us</a>
+                    <a href="index.html" class="hover:opacity-50 transition-opacity whitespace-nowrap">Accueil</a>
+                    <a href="services.html" class="hover:opacity-50 transition-opacity whitespace-nowrap">Nos
+                        Services</a>
+                    <a href="about.html" class="hover:opacity-50 transition-opacity whitespace-nowrap">À Propos</a>
                     <a href="contact.html" class="hover:opacity-50 transition-opacity whitespace-nowrap">Contact</a>
                 </nav>
             </div>
@@ -297,7 +253,6 @@
     </footer>
 
     <script>
-        // Intersection Observer for fade-in animations
         const observerOptions = {
             threshold: 0.1
         };

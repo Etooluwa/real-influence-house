@@ -1,43 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="fr" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | The Real Influence House</title>
-    <link rel="icon" type="image/jpeg" href="assets/images/primary.jpeg">
+    <title>Nos Services | The Real Influence House</title>
+    <link rel="icon" type="image/jpeg" href="../assets/images/primary.jpeg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
-    <!-- Google Calendar Appointment Scheduling begin -->
-    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-    <script>
-        (function () {
-            var target = document.currentScript;
-            window.addEventListener('load', function () {
-                calendar.schedulingButton.load({
-                    url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3s0gfd9TKjmw0_4LlHyowIWUfh3qeZae0YtaTzkf4mtAXv5x2K4Np1mfEUgR2VniEu3Zj_ioXH?gv=true',
-                    color: '#039BE5',
-                    label: 'Free consultation',
-                    target,
-                });
-
-                // Custom script to trigger popup from existing buttons
-                document.querySelectorAll('.consultation-trigger').forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        const scheduleBtn = document.querySelector('.google-calendar-scheduling-button');
-                        if (scheduleBtn) scheduleBtn.click();
-                    });
-                });
-            });
-        })();
-    </script>
-    <!-- end Google Calendar Appointment Scheduling -->
     <style>
         :root {
             --bg-cream: #F9F7F2;
@@ -50,8 +24,6 @@
             background-color: var(--bg-cream);
             color: var(--text-dark);
             overflow-x: hidden;
-            margin: 0;
-            padding: 0;
         }
 
         .serif {
@@ -64,27 +36,6 @@
             letter-spacing: 0.05em;
         }
 
-        .nav-link {
-            position: relative;
-            transition: opacity 0.3s ease;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: -2px;
-            left: 0;
-            background-color: var(--text-dark);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* Custom scrollbar for premium feel */
         ::-webkit-scrollbar {
             width: 6px;
         }
@@ -125,16 +76,14 @@
     <!-- Navigation -->
     <header class="w-full bg-transparent px-6 md:px-12 py-6 md:py-12">
         <div class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center">
-            <!-- Left: Nav Links -->
             <nav
                 class="flex flex-nowrap justify-center md:justify-start gap-x-3 md:gap-x-6 text-[9px] md:text-[11px] uppercase tracking-[0.1em] md:tracking-[0.2em] font-medium text-zinc-500 whitespace-nowrap mb-6 md:mb-0">
-                <a href="index.html" class="hover:text-black transition-colors">○ Home</a>
-                <a href="services.html" class="text-black font-bold transition-colors">● What We Do</a>
-                <a href="about.html" class="hover:text-black transition-colors">○ About Us</a>
+                <a href="index.html" class="hover:text-black transition-colors">○ Accueil</a>
+                <a href="services.html" class="text-black font-bold transition-colors">● Nos Services</a>
+                <a href="about.html" class="hover:text-black transition-colors">○ À Propos</a>
                 <a href="contact.html" class="hover:text-black transition-colors md:hidden">○ Contact</a>
             </nav>
 
-            <!-- Center: Logo & Tagline -->
             <div class="text-center w-full md:min-w-max">
                 <a href="index.html" class="block hover:opacity-70 transition-opacity">
                     <h1
@@ -143,18 +92,16 @@
                 </a>
             </div>
 
-            <!-- Right: Language Toggle & Contact -->
             <div
                 class="hidden md:flex justify-end items-center gap-x-4 text-[11px] uppercase tracking-[0.2em] font-medium text-zinc-500">
-                <a href="fr/services.html"
-                    class="hover:text-black transition-colors border border-zinc-300 px-2 py-1 rounded text-[10px]">FR</a>
+                <a href="../services.html"
+                    class="hover:text-black transition-colors border border-zinc-300 px-2 py-1 rounded text-[10px]">EN</a>
                 <a href="contact.html" class="hover:text-black transition-colors">○ Contact</a>
             </div>
         </div>
-        <!-- Mobile Language Toggle -->
         <div class="md:hidden text-center mt-4">
-            <a href="fr/services.html"
-                class="text-[10px] uppercase tracking-[0.2em] font-medium text-zinc-500 hover:text-black transition-colors border border-zinc-300 px-3 py-1 rounded">Français</a>
+            <a href="../services.html"
+                class="text-[10px] uppercase tracking-[0.2em] font-medium text-zinc-500 hover:text-black transition-colors border border-zinc-300 px-3 py-1 rounded">English</a>
         </div>
     </header>
 
@@ -162,23 +109,18 @@
     <section class="py-20 px-6 md:px-12 text-center">
         <div class="max-w-4xl mx-auto flex flex-col items-center">
             <h2 class="serif text-4xl md:text-6xl italic font-light mb-10">
-                What We Do
+                Nos Services
             </h2>
             <div class="max-w-3xl mx-auto">
                 <p class="text-zinc-800 text-base md:text-lg font-medium mb-6">
-                    RIH helps individuals and organizations build influence with intention.
+                    RIH aide les individus et organisations à construire leur influence avec intention.
                 </p>
                 <p class="text-zinc-600 text-sm md:text-base leading-relaxed mb-8">
-                    We work at the intersection of personal branding, public relations, and strategic positioning. Our
-                    role
-                    is to help you clarify who you are, communicate it with confidence, and turn visibility into
-                    meaningful
-                    opportunities. Through digital products, strategic resources, conferences and advisory services, we
-                    support you in shaping a brand that feels authentic, credible, and sustainable. From defining your
-                    message to preparing you for media, partnerships, and growth, everything we create is designed to
-                    move
-                    you from presence to impact. We believe influence is not just about being seen, but about being
-                    trusted, positioned, and ready.
+                    Nous travaillons à l'intersection du personal branding, des relations publiques et du
+                    positionnement stratégique. Notre rôle est de vous aider à clarifier qui vous êtes, à le
+                    communiquer avec confiance et à transformer votre visibilité en opportunités significatives. À
+                    travers des produits numériques, des ressources stratégiques, des conférences et des services de
+                    conseil, nous vous accompagnons dans la construction d'une marque authentique, crédible et durable.
                 </p>
             </div>
         </div>
@@ -187,19 +129,19 @@
     <!-- Consulting Services Section -->
     <section class="flex flex-col md:flex-row border-t border-zinc-100 min-h-[80vh]">
         <div class="w-full md:w-1/2 h-[50vh] md:h-auto overflow-hidden">
-            <img src="assets/images/content_services_image_1769467613294.png" alt="Consulting Services"
+            <img src="../assets/images/content_services_image_1769467613294.png" alt="Services de Consulting"
                 class="w-full h-full object-cover">
         </div>
         <div class="w-full md:w-1/2 flex flex-col justify-center px-10 md:px-24 py-20 bg-white">
             <h3 class="text-3xl md:text-5xl font-light mb-8">
-                <span class="font-serif italic lowercase"
-                    style="font-family: 'Playfair Display', serif;">consulting</span>
-                Services
+                <span class="font-serif italic lowercase" style="font-family: 'Playfair Display', serif;">services
+                    de</span>
+                Consulting
             </h3>
             <p class="text-zinc-500 text-sm md:text-base leading-relaxed mb-12 max-w-md">
-                We clarify your identity and brand, create a tailored content strategy to bring it to life, and guide
-                you in turning influence into meaningful opportunities while ensuring your message is seen, heard, and
-                positioned for impact.
+                Nous clarifions votre identité et votre marque, créons une stratégie de contenu sur mesure pour lui
+                donner vie, et vous guidons pour transformer votre influence en opportunités significatives tout en
+                assurant que votre message soit vu, entendu et positionné pour l'impact.
             </p>
 
             <!-- Accordion -->
@@ -208,74 +150,66 @@
                     <button
                         class="w-full flex justify-between items-center text-left hover:text-zinc-400 transition-colors py-2"
                         onclick="toggleAccordion(this)">
-                        <span class="text-xs uppercase tracking-[0.2em]">01. Personal brand</span>
+                        <span class="text-xs uppercase tracking-[0.2em]">01. Marque Personnelle</span>
                         <span class="text-lg font-light leading-none">+</span>
                     </button>
                     <div class="accordion-content hidden pt-4 pb-2 text-zinc-500 text-xs leading-relaxed max-w-sm">
-                        We clarify your identity, values, voice, and positioning, defining what you want to be known
-                        for.
-                        We align your story, messaging, and visuals to create a cohesive brand presence. From there, we
-                        design a tailored content strategy to guide your daily posting and ongoing optimization.
+                        Nous clarifions votre identité, vos valeurs, votre voix et votre positionnement, en définissant
+                        ce pour quoi vous voulez être connu. Nous alignons votre histoire, vos messages et vos visuels
+                        pour créer une présence de marque cohérente.
                     </div>
                 </div>
                 <div class="accordion-item border-b border-zinc-100 pb-4">
                     <button
                         class="w-full flex justify-between items-center text-left hover:text-zinc-400 transition-colors py-2"
                         onclick="toggleAccordion(this)">
-                        <span class="text-xs uppercase tracking-[0.2em]">02. Public Relations</span>
+                        <span class="text-xs uppercase tracking-[0.2em]">02. Relations Publiques</span>
                         <span class="text-lg font-light leading-none">+</span>
                     </button>
                     <div class="accordion-content hidden pt-4 pb-2 text-zinc-500 text-xs leading-relaxed max-w-sm">
-                        We assess whether your brand and current initiatives would benefit from media coverage and press
-                        placements. When appropriate, we define the narrative worth telling, identify the most relevant
-                        outlets, and determine the type of visibility that aligns with your brand and season. We then
-                        secure strategic placements across print, podcasts, television, and radio for announcements,
-                        launches, and moments requiring careful reputation management. This work is centered on shaping
-                        public perception, protecting credibility, and bringing thoughtful visibility to what you are
-                        building.
+                        Nous évaluons si votre marque bénéficierait d'une couverture médiatique. Nous définissons le
+                        récit à raconter, identifions les médias pertinents et sécurisons des placements stratégiques
+                        dans la presse, les podcasts, la télévision et la radio.
                     </div>
                 </div>
                 <div class="accordion-item border-b border-zinc-100 pb-4">
                     <button
                         class="w-full flex justify-between items-center text-left hover:text-zinc-400 transition-colors py-2"
                         onclick="toggleAccordion(this)">
-                        <span class="text-xs uppercase tracking-[0.2em]">03. Influence to Opportunities</span>
+                        <span class="text-xs uppercase tracking-[0.2em]">03. Influence vers Opportunités</span>
                         <span class="text-lg font-light leading-none">+</span>
                     </button>
                     <div class="accordion-content hidden pt-4 pb-2 text-zinc-500 text-xs leading-relaxed max-w-sm">
-                        We help identify opportunities that align with your brand and guide you on how to pursue them.
-                        From developing content strategies to opening the right doors, we show you what to implement,
-                        where to focus, and how to position yourself for meaningful, high‑impact opportunities.
+                        Nous aidons à identifier les opportunités alignées avec votre marque et vous guidons sur la
+                        façon de les poursuivre. Nous vous montrons comment vous positionner pour des opportunités
+                        significatives et à fort impact.
                     </div>
                 </div>
             </div>
 
-            <!-- CTA Button -->
             <div class="text-center">
                 <a href="https://calendar.app.google/S2SS8npWgh8eRufd7" target="_blank" rel="noopener noreferrer"
                     class="inline-block bg-black text-white px-10 py-5 rounded-full text-[11px] font-semibold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-all transform hover:scale-105">
-                    Free consultation
+                    Consultation gratuite
                 </a>
             </div>
         </div>
     </section>
 
-
-
     <!-- Digital Products Section -->
     <section class="flex flex-col md:flex-row border-t border-zinc-100 min-h-[90vh]">
         <div class="w-full md:w-1/2 flex flex-col justify-center px-10 md:px-24 py-20 order-2 md:order-1">
             <h3 class="text-3xl md:text-5xl font-light mb-8">
-                <span class="font-serif italic lowercase" style="font-family: 'Playfair Display', serif;">digital</span>
-                products
+                <span class="font-serif italic lowercase"
+                    style="font-family: 'Playfair Display', serif;">produits</span>
+                numériques
             </h3>
             <p class="text-zinc-500 text-sm md:text-base leading-relaxed mb-6 max-w-md">
-                Access videos from our conferences if you can’t attend in person, along with in‑class style lessons,
-                ebooks, and other practical materials designed to help you build your brand, amplify your influence, and
-                turn influence into opportunities.
+                Accédez aux vidéos de nos conférences si vous ne pouvez pas y assister en personne, ainsi qu'à des
+                leçons, des ebooks et d'autres matériaux pratiques conçus pour vous aider à construire votre marque et
+                amplifier votre influence.
             </p>
 
-            <!-- Product Tiers Accordion -->
             <div class="space-y-4 border-t border-zinc-100 pt-8 mt-6">
                 <div class="accordion-item border-b border-zinc-100 pb-4">
                     <button
@@ -285,26 +219,26 @@
                         <span class="text-lg font-light leading-none">+</span>
                     </button>
                     <div class="accordion-content hidden pt-4 pb-2 text-zinc-500 text-xs leading-relaxed max-w-sm">
-                        Downloadable guides and comprehensive resources covering personal branding, influence
-                        strategies, and public relations fundamentals to help you build and amplify your presence.
+                        Guides téléchargeables et ressources complètes couvrant le personal branding, les stratégies
+                        d'influence et les fondamentaux des relations publiques.
                     </div>
                 </div>
                 <div class="accordion-item border-b border-zinc-100 pb-4">
                     <button
                         class="w-full flex justify-between items-center text-left hover:text-zinc-400 transition-colors py-2"
                         onclick="toggleAccordion(this)">
-                        <span class="text-xs uppercase tracking-[0.2em]">02. Video Masterclasses</span>
+                        <span class="text-xs uppercase tracking-[0.2em]">02. Masterclasses Vidéo</span>
                         <span class="text-lg font-light leading-none">+</span>
                     </button>
                     <div class="accordion-content hidden pt-4 pb-2 text-zinc-500 text-xs leading-relaxed max-w-sm">
-                        In-depth video lessons and conference recordings featuring expert insights, practical workshops,
-                        and step-by-step strategies for turning influence into meaningful opportunities.
+                        Leçons vidéo approfondies et enregistrements de conférences avec des perspectives d'experts,
+                        des ateliers pratiques et des stratégies étape par étape.
                     </div>
                 </div>
             </div>
         </div>
         <div class="w-full md:w-1/2 h-[50vh] md:h-auto overflow-hidden order-1 md:order-2">
-            <img src="assets/images/consulting_services_image_1769467629013.png" alt="Management Services"
+            <img src="../assets/images/consulting_services_image_1769467629013.png" alt="Produits Numériques"
                 class="w-full h-full object-cover">
         </div>
     </section>
@@ -312,24 +246,25 @@
     <!-- The Art of Influence Conference Section -->
     <section class="flex flex-col md:flex-row border-t border-zinc-100 min-h-[80vh]">
         <div class="w-full md:w-1/2 h-[50vh] md:h-auto overflow-hidden">
-            <img src="assets/images/img11.JPG" alt="The Art of Influence Conference" class="w-full h-full object-cover">
+            <img src="../assets/images/img11.JPG" alt="The Art of Influence Conference"
+                class="w-full h-full object-cover">
         </div>
         <div class="w-full md:w-1/2 flex flex-col justify-center px-10 md:px-24 py-20 bg-white">
             <h3 class="text-3xl md:text-5xl font-light mb-8 leading-tight">
                 <span class="font-serif italic lowercase" style="font-family: 'Playfair Display', serif;">the art of
                     influence</span><br>
-                <span class="text-[0.92em]">Conference</span><br>
-                <span class="text-[0.3em] tracking-[0.2em] font-light opacity-60 uppercase">coming soon</span>
+                <span class="text-[0.92em]">Conférence</span><br>
+                <span class="text-[0.3em] tracking-[0.2em] font-light opacity-60 uppercase">bientôt disponible</span>
             </h3>
             <p class="text-zinc-500 text-sm md:text-base leading-relaxed mb-12 max-w-md">
-                Join us for an immersive experience featuring special guests, expert insights, and practical workshops
-                on mastering personal branding, public relations, and turning influence into opportunity. Stay tuned for
-                updates and secure your chance to learn from the best.
+                Rejoignez-nous pour une expérience immersive avec des invités spéciaux, des perspectives d'experts et
+                des ateliers pratiques sur la maîtrise du personal branding, des relations publiques et la
+                transformation de l'influence en opportunité.
             </p>
             <div class="text-center">
                 <button onclick="openConferenceModal()"
                     class="inline-block bg-black text-white px-10 py-5 rounded-full text-[11px] font-semibold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-all transform hover:scale-105">
-                    Be the First to Know
+                    Soyez les Premiers Informés
                 </button>
             </div>
         </div>
@@ -342,24 +277,24 @@
                 class="absolute top-4 right-4 text-zinc-400 hover:text-black transition-colors text-2xl">&times;</button>
             <h3 class="text-2xl font-light mb-2">
                 <span class="font-serif italic" style="font-family: 'Playfair Display', serif;">the art of
-                    influence</span> Conference
+                    influence</span> Conférence
             </h3>
-            <p class="text-zinc-500 text-sm mb-8">Be the first to know when tickets are available.</p>
+            <p class="text-zinc-500 text-sm mb-8">Soyez les premiers informés quand les billets seront disponibles.</p>
             <form id="conference-form" class="space-y-6">
                 <div>
-                    <label class="text-[10px] text-zinc-400 uppercase tracking-widest block mb-2">Full Name</label>
-                    <input type="text" name="fullName" id="conf-name" required placeholder="Your name"
+                    <label class="text-[10px] text-zinc-400 uppercase tracking-widest block mb-2">Nom Complet</label>
+                    <input type="text" name="fullName" id="conf-name" required placeholder="Votre nom"
                         class="w-full border-b border-zinc-200 py-3 text-sm focus:outline-none focus:border-black transition-colors bg-transparent">
                 </div>
                 <div>
-                    <label class="text-[10px] text-zinc-400 uppercase tracking-widest block mb-2">Email Address</label>
-                    <input type="email" name="email" id="conf-email" required placeholder="your@email.com"
+                    <label class="text-[10px] text-zinc-400 uppercase tracking-widest block mb-2">Adresse Email</label>
+                    <input type="email" name="email" id="conf-email" required placeholder="votre@email.com"
                         class="w-full border-b border-zinc-200 py-3 text-sm focus:outline-none focus:border-black transition-colors bg-transparent">
                 </div>
                 <div class="pt-4">
                     <button type="submit" id="conf-submit-btn"
                         class="w-full bg-black text-white py-4 rounded-full text-[11px] font-semibold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed">
-                        Notify Me
+                        Me Notifier
                     </button>
                     <p id="conf-status" class="mt-4 text-xs tracking-widest text-center hidden"></p>
                 </div>
@@ -381,20 +316,6 @@
             }
         }
 
-        function toggleForm() {
-            const form = document.getElementById('inquiry-form');
-            const icon = document.getElementById('form-toggle-icon');
-
-            if (form.classList.contains('hidden')) {
-                form.classList.remove('hidden');
-                icon.textContent = '−';
-            } else {
-                form.classList.add('hidden');
-                icon.textContent = '+';
-            }
-        }
-
-        // Conference Modal Functions
         function openConferenceModal() {
             const modal = document.getElementById('conference-modal');
             modal.classList.remove('hidden');
@@ -410,12 +331,10 @@
             document.getElementById('conf-status').classList.add('hidden');
         }
 
-        // Close modal when clicking outside
         document.getElementById('conference-modal').addEventListener('click', function (e) {
             if (e.target === this) closeConferenceModal();
         });
 
-        // Conference Form Submission
         document.getElementById('conference-form').addEventListener('submit', async function (e) {
             e.preventDefault();
 
@@ -423,7 +342,7 @@
             const statusMsg = document.getElementById('conf-status');
             const originalBtnText = submitBtn.innerText;
 
-            submitBtn.innerText = 'SENDING...';
+            submitBtn.innerText = 'ENVOI...';
             submitBtn.disabled = true;
             statusMsg.classList.add('hidden');
             statusMsg.classList.remove('text-red-500', 'text-green-500');
@@ -446,17 +365,17 @@
                 const result = await response.json();
 
                 if (response.ok) {
-                    statusMsg.innerText = "YOU'RE ON THE LIST! WE'LL BE IN TOUCH.";
+                    statusMsg.innerText = "VOUS ÊTES SUR LA LISTE ! NOUS VOUS CONTACTERONS.";
                     statusMsg.classList.add('text-green-500');
                     statusMsg.classList.remove('hidden');
                     this.reset();
                     setTimeout(() => closeConferenceModal(), 3000);
                 } else {
-                    throw new Error(result.error || 'Failed to submit');
+                    throw new Error(result.error || 'Échec de l\'envoi');
                 }
             } catch (error) {
                 console.error('Error:', error);
-                statusMsg.innerText = 'ERROR. PLEASE TRY AGAIN.';
+                statusMsg.innerText = 'ERREUR. VEUILLEZ RÉESSAYER.';
                 statusMsg.classList.add('text-red-500');
                 statusMsg.classList.remove('hidden');
             } finally {
@@ -466,16 +385,18 @@
         });
     </script>
 
-    <!-- Large Text Marquee / CTA -->
+    <!-- Large Text Marquee -->
     <section class="py-10 overflow-hidden border-y border-zinc-200">
         <div class="whitespace-nowrap flex animate-marquee">
             <div class="serif text-2xl md:text-4xl italic font-light px-4 text-black uppercase tracking-tighter">
-                Personal Brand - Public Relations - Influence Opportunity - Personal Brand - Public Relations -
-                Influence Opportunity -
+                Marque Personnelle - Relations Publiques - Opportunité d'Influence - Marque Personnelle - Relations
+                Publiques -
+                Opportunité d'Influence -
             </div>
             <div class="serif text-2xl md:text-4xl italic font-light px-4 text-black uppercase tracking-tighter">
-                Personal Brand - Public Relations - Influence Opportunity - Personal Brand - Public Relations -
-                Influence Opportunity -
+                Marque Personnelle - Relations Publiques - Opportunité d'Influence - Marque Personnelle - Relations
+                Publiques -
+                Opportunité d'Influence -
             </div>
         </div>
     </section>
@@ -483,7 +404,6 @@
     <!-- Footer -->
     <footer id="contact" class="pt-12 pb-24 px-6 md:px-12 border-t border-zinc-100">
         <div class="max-w-screen-2xl mx-auto flex flex-col items-center">
-            <!-- Social Links & Branding -->
             <div class="w-full flex flex-col items-center space-y-12 mb-16">
                 <div
                     class="flex flex-wrap justify-center gap-x-6 gap-y-4 md:gap-x-8 text-[11px] uppercase tracking-[0.2em] font-medium text-zinc-500">
@@ -505,14 +425,14 @@
                     </a>
                 </div>
                 <nav class="flex justify-center flex-wrap gap-8 text-[11px] uppercase tracking-[0.2em] font-medium">
-                    <a href="index.html" class="hover:opacity-50 transition-opacity whitespace-nowrap">Home</a>
-                    <a href="services.html" class="hover:opacity-50 transition-opacity whitespace-nowrap">What We Do</a>
-                    <a href="about.html" class="hover:opacity-50 transition-opacity whitespace-nowrap">About Us</a>
+                    <a href="index.html" class="hover:opacity-50 transition-opacity whitespace-nowrap">Accueil</a>
+                    <a href="services.html" class="hover:opacity-50 transition-opacity whitespace-nowrap">Nos
+                        Services</a>
+                    <a href="about.html" class="hover:opacity-50 transition-opacity whitespace-nowrap">À Propos</a>
                     <a href="contact.html" class="hover:opacity-50 transition-opacity whitespace-nowrap">Contact</a>
                 </nav>
             </div>
 
-            <!-- Copyright Footer -->
             <div
                 class="w-full pt-12 border-t border-zinc-100 flex flex-col md:row justify-between items-center text-[10px] text-zinc-400 uppercase tracking-[0.15em]">
                 <div>The Real Influence House © 2026</div>
