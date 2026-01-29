@@ -91,6 +91,15 @@
                 animation-duration: 15s;
             }
         }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 
@@ -135,14 +144,13 @@
     <!-- Library Hero Section -->
     <section class="py-20 px-6 md:px-12 text-center">
         <div class="max-w-4xl mx-auto flex flex-col items-center">
-            <h2 class="serif text-4xl md:text-6xl italic font-light mb-10">
-                The Library
+            The <span class="font-serif italic lowercase" style="font-family: 'Playfair Display', serif;">library</span>
             </h2>
             <div class="max-w-3xl mx-auto">
-                <p class="text-zinc-800 text-base md:text-lg font-medium mb-6">
+                <p class="text-zinc-800 text-base md:text-lg font-medium mb-4">
                     Curated resources to build your influence.
                 </p>
-                <p class="text-zinc-600 text-sm md:text-base leading-relaxed mb-8">
+                <p class="text-zinc-600 text-sm md:text-base leading-relaxed mb-6">
                     Explore our collection of digital learning materials designed to help you clarify your brand, master
                     public relations, and turn your influence into tangible opportunities.
                 </p>
@@ -153,13 +161,22 @@
     <!-- E-books Section -->
     <section id="ebooks" class="py-16 px-6 md:px-12 border-t border-zinc-100">
         <div class="max-w-screen-2xl mx-auto">
-            <h3 class="text-3xl md:text-4xl font-light mb-12 text-center">
-                <span class="font-serif italic lowercase" style="font-family: 'Playfair Display', serif;">e-</span>books
-            </h3>
+            <div class="flex justify-between items-end mb-8 md:mb-12 px-2">
+                <h3 class="text-3xl md:text-4xl font-light text-center md:text-left">
+                    <span class="font-serif italic lowercase"
+                        style="font-family: 'Playfair Display', serif;">e-</span>books
+                </h3>
+                <button onclick="toggleView('ebooks-container', this)"
+                    class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">
+                    See All
+                </button>
+            </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-                <!-- Product 1 Placeholder -->
-                <div class="flex flex-col">
+            <!-- E-books Container -->
+            <div id="ebooks-container"
+                class="flex overflow-x-auto gap-6 pb-4 snap-x hide-scrollbar md:grid md:grid-cols-3 md:gap-12 md:overflow-visible transition-all duration-300">
+                <!-- Product 1 -->
+                <div class="min-w-[80vw] md:min-w-0 snap-center flex flex-col">
                     <div class="bg-zinc-100 aspect-[3/4] mb-6 flex items-center justify-center text-zinc-300">
                         <span class="uppercase tracking-widest text-xs">Product Image</span>
                     </div>
@@ -174,8 +191,8 @@
                     </div>
                 </div>
 
-                <!-- Product 2 Placeholder -->
-                <div class="flex flex-col">
+                <!-- Product 2 -->
+                <div class="min-w-[80vw] md:min-w-0 snap-center flex flex-col">
                     <div class="bg-zinc-100 aspect-[3/4] mb-6 flex items-center justify-center text-zinc-300">
                         <span class="uppercase tracking-widest text-xs">Product Image</span>
                     </div>
@@ -190,8 +207,8 @@
                     </div>
                 </div>
 
-                <!-- Product 3 Placeholder -->
-                <div class="flex flex-col">
+                <!-- Product 3 -->
+                <div class="min-w-[80vw] md:min-w-0 snap-center flex flex-col">
                     <div class="bg-zinc-100 aspect-[3/4] mb-6 flex items-center justify-center text-zinc-300">
                         <span class="uppercase tracking-widest text-xs">Product Image</span>
                     </div>
@@ -211,14 +228,23 @@
     <!-- Video Masterclasses Section -->
     <section id="masterclasses" class="py-16 px-6 md:px-12 border-t border-zinc-100 bg-zinc-50">
         <div class="max-w-screen-2xl mx-auto">
-            <h3 class="text-3xl md:text-4xl font-light mb-12 text-center">
-                <span class="font-serif italic lowercase" style="font-family: 'Playfair Display', serif;">video</span>
-                masterclasses
-            </h3>
+            <div class="flex justify-between items-end mb-8 md:mb-12 px-2">
+                <h3 class="text-3xl md:text-4xl font-light text-center md:text-left">
+                    <span class="font-serif italic lowercase"
+                        style="font-family: 'Playfair Display', serif;">video</span>
+                    masterclasses
+                </h3>
+                <button onclick="toggleView('masterclasses-container', this)"
+                    class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">
+                    See All
+                </button>
+            </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                <!-- Masterclass 1 Placeholder -->
-                <div class="flex flex-col">
+            <!-- Masterclasses Container -->
+            <div id="masterclasses-container"
+                class="flex overflow-x-auto gap-6 pb-4 snap-x hide-scrollbar md:grid md:grid-cols-2 md:gap-12 md:overflow-visible transition-all duration-300">
+                <!-- Masterclass 1 -->
+                <div class="min-w-[85vw] md:min-w-0 snap-center flex flex-col">
                     <div
                         class="bg-white aspect-video mb-6 flex items-center justify-center text-zinc-300 border border-zinc-200">
                         <span class="uppercase tracking-widest text-xs">Video Thumbnail</span>
@@ -234,8 +260,8 @@
                     </div>
                 </div>
 
-                <!-- Masterclass 2 Placeholder -->
-                <div class="flex flex-col">
+                <!-- Masterclass 2 -->
+                <div class="min-w-[85vw] md:min-w-0 snap-center flex flex-col">
                     <div
                         class="bg-white aspect-video mb-6 flex items-center justify-center text-zinc-300 border border-zinc-200">
                         <span class="uppercase tracking-widest text-xs">Video Thumbnail</span>
@@ -253,6 +279,40 @@
             </div>
         </div>
     </section>
+
+    <script>
+        function toggleView(containerId, button) {
+            const container = document.getElementById(containerId);
+
+            // Toggle classes between flex (carousel) and grid
+            if (container.classList.contains('flex')) {
+                // Switch to Grid (Show All)
+                container.classList.remove('flex', 'overflow-x-auto', 'snap-x', 'hide-scrollbar');
+                container.classList.add('grid', 'grid-cols-1', 'gap-y-12');
+
+                // Remove width constraints from children for grid view
+                const children = container.children;
+                for (let child of children) {
+                    child.classList.remove('min-w-[80vw]', 'min-w-[85vw]', 'snap-center');
+                }
+
+                button.textContent = "Show Less";
+            } else {
+                // Switch back to Carousel
+                container.classList.remove('grid', 'grid-cols-1', 'gap-y-12');
+                container.classList.add('flex', 'overflow-x-auto', 'snap-x', 'hide-scrollbar');
+
+                // Add width constraints back
+                const children = container.children;
+                const minWidth = containerId === 'ebooks-container' ? 'min-w-[80vw]' : 'min-w-[85vw]';
+                for (let child of children) {
+                    child.classList.add(minWidth, 'snap-center');
+                }
+
+                button.textContent = "See All";
+            }
+        }
+    </script>
 
     <!-- Large Text Marquee / CTA -->
     <section class="py-10 overflow-hidden border-y border-zinc-200 bg-white">
