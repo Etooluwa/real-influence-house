@@ -144,8 +144,9 @@
     <!-- Library Hero Section -->
     <section class="py-20 px-6 md:px-12 text-center">
         <div class="max-w-4xl mx-auto flex flex-col items-center">
-            La <span class="font-serif italic lowercase"
-                style="font-family: 'Playfair Display', serif;">bibliothèque</span>
+            <h2 class="serif text-6xl md:text-8xl italic font-light mb-10">
+                La <span class="font-serif italic lowercase"
+                    style="font-family: 'Playfair Display', serif;">bibliothèque</span>
             </h2>
             <div class="max-w-3xl mx-auto">
                 <p class="text-zinc-800 text-base md:text-lg font-medium mb-4">
@@ -223,6 +224,36 @@
                             Maintenant</button>
                     </div>
                 </div>
+
+                <!-- Product 4 -->
+                <div class="min-w-[80vw] md:min-w-0 snap-center flex flex-col">
+                    <div class="bg-zinc-100 aspect-[3/4] mb-6 flex items-center justify-center text-zinc-300">
+                        <span class="uppercase tracking-widest text-xs">Image Produit</span>
+                    </div>
+                    <h4 class="text-lg font-medium mb-2">Guide des Archétypes de Marque</h4>
+                    <p class="text-zinc-500 text-xs mb-4">Découvrez la personnalité et la voix de votre marque.</p>
+                    <div class="mt-auto flex justify-between items-center">
+                        <span class="font-serif italic text-lg">$19.00</span>
+                        <button
+                            class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
+                            Maintenant</button>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="min-w-[80vw] md:min-w-0 snap-center flex flex-col">
+                    <div class="bg-zinc-100 aspect-[3/4] mb-6 flex items-center justify-center text-zinc-300">
+                        <span class="uppercase tracking-widest text-xs">Image Produit</span>
+                    </div>
+                    <h4 class="text-lg font-medium mb-2">Modèles de Pitch Média</h4>
+                    <p class="text-zinc-500 text-xs mb-4">Des modèles éprouvés pour faire entendre votre histoire.</p>
+                    <div class="mt-auto flex justify-between items-center">
+                        <span class="font-serif italic text-lg">$22.00</span>
+                        <button
+                            class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
+                            Maintenant</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -277,6 +308,38 @@
                             Maintenant</button>
                     </div>
                 </div>
+
+                <!-- Masterclass 3 -->
+                <div class="min-w-[85vw] md:min-w-0 snap-center flex flex-col">
+                    <div
+                        class="bg-white aspect-video mb-6 flex items-center justify-center text-zinc-300 border border-zinc-200">
+                        <span class="uppercase tracking-widest text-xs">Miniature Vidéo</span>
+                    </div>
+                    <h4 class="text-lg font-medium mb-2">Gestion de Crise 101</h4>
+                    <p class="text-zinc-500 text-xs mb-4">Protéger votre réputation de marque à l'ère numérique.</p>
+                    <div class="mt-auto flex justify-between items-center">
+                        <span class="font-serif italic text-lg">$129.00</span>
+                        <button
+                            class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
+                            Maintenant</button>
+                    </div>
+                </div>
+
+                <!-- Masterclass 4 -->
+                <div class="min-w-[85vw] md:min-w-0 snap-center flex flex-col">
+                    <div
+                        class="bg-white aspect-video mb-6 flex items-center justify-center text-zinc-300 border border-zinc-200">
+                        <span class="uppercase tracking-widest text-xs">Miniature Vidéo</span>
+                    </div>
+                    <h4 class="text-lg font-medium mb-2">Maîtrise de la Prise de Parole</h4>
+                    <p class="text-zinc-500 text-xs mb-4">Maîtrisez la scène et captivez n'importe quel public.</p>
+                    <div class="mt-auto flex justify-between items-center">
+                        <span class="font-serif italic text-lg">$199.00</span>
+                        <button
+                            class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
+                            Maintenant</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -284,32 +347,32 @@
     <script>
         function toggleView(containerId, button) {
             const container = document.getElementById(containerId);
-            
+
             // Toggle classes between flex (carousel) and grid
             if (container.classList.contains('flex')) {
                 // Switch to Grid (Show All)
                 container.classList.remove('flex', 'overflow-x-auto', 'snap-x', 'hide-scrollbar');
                 container.classList.add('grid', 'grid-cols-1', 'gap-y-12');
-                
+
                 // Remove width constraints from children for grid view
                 const children = container.children;
-                for(let child of children) {
+                for (let child of children) {
                     child.classList.remove('min-w-[80vw]', 'min-w-[85vw]', 'snap-center');
                 }
-                
+
                 button.textContent = "Voir Moins";
             } else {
                 // Switch back to Carousel
                 container.classList.remove('grid', 'grid-cols-1', 'gap-y-12');
                 container.classList.add('flex', 'overflow-x-auto', 'snap-x', 'hide-scrollbar');
-                
+
                 // Add width constraints back
                 const children = container.children;
                 const minWidth = containerId === 'ebooks-container' ? 'min-w-[80vw]' : 'min-w-[85vw]';
-                for(let child of children) {
+                for (let child of children) {
                     child.classList.add(minWidth, 'snap-center');
                 }
-                
+
                 button.textContent = "Voir Tout";
             }
         }
