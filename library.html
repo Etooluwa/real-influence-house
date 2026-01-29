@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Library | The Real Influence House</title>
+    <link rel="icon" type="image/jpeg" href="assets/images/primary.jpeg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-cream: #F9F7F2;
+            --text-dark: #1A1A1A;
+            --accent-gray: #7A7A7A;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .branding-font {
+            font-family: 'Bodoni Moda', serif;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--text-dark);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Custom scrollbar for premium feel */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #D1CEC5;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-marquee {
+            animation: marquee 30s linear infinite;
+            will-change: transform;
+        }
+
+        @media (max-width: 768px) {
+            .animate-marquee {
+                animation-duration: 15s;
+            }
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <header class="w-full bg-transparent px-6 md:px-12 py-6 md:py-12">
+        <div class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center">
+            <!-- Left: Nav Links -->
+            <nav
+                class="flex flex-nowrap justify-center md:justify-start gap-x-3 md:gap-x-6 text-[9px] md:text-[11px] uppercase tracking-[0.1em] md:tracking-[0.2em] font-medium text-zinc-500 whitespace-nowrap mb-6 md:mb-0">
+                <a href="index.html" class="hover:text-black transition-colors">○ Home</a>
+                <a href="services.html" class="hover:text-black transition-colors">○ What We Do</a>
+                <a href="about.html" class="hover:text-black transition-colors">○ About Us</a>
+                <a href="contact.html" class="hover:text-black transition-colors md:hidden">○ Contact</a>
+            </nav>
+
+            <!-- Center: Logo & Tagline -->
+            <div class="text-center w-full md:min-w-max">
+                <a href="index.html" class="block hover:opacity-70 transition-opacity">
+                    <h1
+                        class="branding-font text-[1.2rem] sm:text-2xl md:text-3xl tracking-[0.02em] font-medium uppercase mb-1 whitespace-nowrap">
+                        The Real Influence House</h1>
+                </a>
+            </div>
+
+            <!-- Right: Language Toggle & Contact -->
+            <div
+                class="hidden md:flex justify-end items-center gap-x-4 text-[11px] uppercase tracking-[0.2em] font-medium text-zinc-500">
+                <a href="contact.html" class="hover:text-black transition-colors">○ Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Library Hero Section -->
+    <section class="py-20 px-6 md:px-12 text-center">
+        <div class="max-w-4xl mx-auto flex flex-col items-center">
+            <h2 class="serif text-4xl md:text-6xl italic font-light mb-10">
+                The Library
+            </h2>
+            <div class="max-w-3xl mx-auto">
+                <p class="text-zinc-800 text-base md:text-lg font-medium mb-6">
+                    Curated resources to build your influence.
+                </p>
+                <p class="text-zinc-600 text-sm md:text-base leading-relaxed mb-8">
+                    Explore our collection of digital learning materials designed to help you clarify your brand, master
+                    public relations, and turn your influence into tangible opportunities.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- E-books Section -->
+    <section id="ebooks" class="py-16 px-6 md:px-12 border-t border-zinc-100">
+        <div class="max-w-screen-2xl mx-auto">
+            <h3 class="text-3xl md:text-4xl font-light mb-12 text-center">
+                <span class="font-serif italic lowercase" style="font-family: 'Playfair Display', serif;">e-</span>books
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                <!-- Product 1 Placeholder -->
+                <div class="flex flex-col">
+                    <div class="bg-zinc-100 aspect-[3/4] mb-6 flex items-center justify-center text-zinc-300">
+                        <span class="uppercase tracking-widest text-xs">Product Image</span>
+                    </div>
+                    <h4 class="text-lg font-medium mb-2">The Influence Blueprint</h4>
+                    <p class="text-zinc-500 text-xs mb-4">A comprehensive guide to building a personal brand that lasts.
+                    </p>
+                    <div class="mt-auto flex justify-between items-center">
+                        <span class="font-serif italic text-lg">$29.00</span>
+                        <button
+                            class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Buy
+                            Now</button>
+                    </div>
+                </div>
+
+                <!-- Product 2 Placeholder -->
+                <div class="flex flex-col">
+                    <div class="bg-zinc-100 aspect-[3/4] mb-6 flex items-center justify-center text-zinc-300">
+                        <span class="uppercase tracking-widest text-xs">Product Image</span>
+                    </div>
+                    <h4 class="text-lg font-medium mb-2">PR Starter Kit</h4>
+                    <p class="text-zinc-500 text-xs mb-4">Everything you need to pitch yourself to the media with
+                        confidence.</p>
+                    <div class="mt-auto flex justify-between items-center">
+                        <span class="font-serif italic text-lg">$35.00</span>
+                        <button
+                            class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Buy
+                            Now</button>
+                    </div>
+                </div>
+
+                <!-- Product 3 Placeholder -->
+                <div class="flex flex-col">
+                    <div class="bg-zinc-100 aspect-[3/4] mb-6 flex items-center justify-center text-zinc-300">
+                        <span class="uppercase tracking-widest text-xs">Product Image</span>
+                    </div>
+                    <h4 class="text-lg font-medium mb-2">Content Strategy Workbook</h4>
+                    <p class="text-zinc-500 text-xs mb-4">Plan, create, and execute content that converts.</p>
+                    <div class="mt-auto flex justify-between items-center">
+                        <span class="font-serif italic text-lg">$25.00</span>
+                        <button
+                            class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Buy
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Masterclasses Section -->
+    <section id="masterclasses" class="py-16 px-6 md:px-12 border-t border-zinc-100 bg-zinc-50">
+        <div class="max-w-screen-2xl mx-auto">
+            <h3 class="text-3xl md:text-4xl font-light mb-12 text-center">
+                <span class="font-serif italic lowercase" style="font-family: 'Playfair Display', serif;">video</span>
+                masterclasses
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                <!-- Masterclass 1 Placeholder -->
+                <div class="flex flex-col">
+                    <div
+                        class="bg-white aspect-video mb-6 flex items-center justify-center text-zinc-300 border border-zinc-200">
+                        <span class="uppercase tracking-widest text-xs">Video Thumbnail</span>
+                    </div>
+                    <h4 class="text-lg font-medium mb-2">Mastering Your Personal Brand</h4>
+                    <p class="text-zinc-500 text-xs mb-4">A 2-hour deep dive into defining and projecting your unique
+                        identity.</p>
+                    <div class="mt-auto flex justify-between items-center">
+                        <span class="font-serif italic text-lg">$99.00</span>
+                        <button
+                            class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Buy
+                            Now</button>
+                    </div>
+                </div>
+
+                <!-- Masterclass 2 Placeholder -->
+                <div class="flex flex-col">
+                    <div
+                        class="bg-white aspect-video mb-6 flex items-center justify-center text-zinc-300 border border-zinc-200">
+                        <span class="uppercase tracking-widest text-xs">Video Thumbnail</span>
+                    </div>
+                    <h4 class="text-lg font-medium mb-2">Influence to Opportunity</h4>
+                    <p class="text-zinc-500 text-xs mb-4">Learn how to monetize your following and secure brand deals.
+                    </p>
+                    <div class="mt-auto flex justify-between items-center">
+                        <span class="font-serif italic text-lg">$149.00</span>
+                        <button
+                            class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Buy
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Large Text Marquee / CTA -->
+    <section class="py-10 overflow-hidden border-y border-zinc-200 bg-white">
+        <div class="whitespace-nowrap flex animate-marquee">
+            <div class="serif text-2xl md:text-4xl italic font-light px-4 text-black uppercase tracking-tighter">
+                Personal Brand - Public Relations - Influence Opportunity - Personal Brand - Public Relations -
+                Influence Opportunity -
+            </div>
+            <div class="serif text-2xl md:text-4xl italic font-light px-4 text-black uppercase tracking-tighter">
+                Personal Brand - Public Relations - Influence Opportunity - Personal Brand - Public Relations -
+                Influence Opportunity -
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="pt-12 pb-24 px-6 md:px-12 border-t border-zinc-100">
+        <div class="max-w-screen-2xl mx-auto flex flex-col items-center">
+            <!-- Social Links & Branding -->
+            <div class="w-full flex flex-col items-center space-y-12 mb-16">
+                <div
+                    class="flex flex-wrap justify-center gap-x-6 gap-y-4 md:gap-x-8 text-[11px] uppercase tracking-[0.2em] font-medium text-zinc-500">
+                    <a href="https://www.instagram.com/realinfluencehouse/" target="_blank" rel="noopener noreferrer"
+                        class="hover:text-black transition-colors">Instagram</a>
+                    <a href="https://www.tiktok.com/@realinfluencehouse" target="_blank" rel="noopener noreferrer"
+                        class="hover:text-black transition-colors">TikTok</a>
+                    <a href="#" target="_blank" rel="noopener noreferrer"
+                        class="hover:text-black transition-colors">YouTube</a>
+                    <a href="mailto:hello@realinfluencehouse.com"
+                        class="hover:text-black transition-colors">hello@realinfluencehouse.com</a>
+                </div>
+
+                <div class="text-center">
+                    <a href="index.html" class="block hover:opacity-70 transition-opacity">
+                        <h2 class="branding-font text-2xl md:text-3xl tracking-[0.15em] font-bold uppercase mb-2">The
+                            Real
+                            Influence House</h2>
+                    </a>
+                </div>
+                <nav class="flex justify-center flex-wrap gap-8 text-[11px] uppercase tracking-[0.2em] font-medium">
+                    <a href="index.html" class="hover:opacity-50 transition-opacity whitespace-nowrap">Home</a>
+                    <a href="services.html" class="hover:opacity-50 transition-opacity whitespace-nowrap">What We Do</a>
+                    <a href="about.html" class="hover:opacity-50 transition-opacity whitespace-nowrap">About Us</a>
+                    <a href="contact.html" class="hover:opacity-50 transition-opacity whitespace-nowrap">Contact</a>
+                </nav>
+            </div>
+
+            <!-- Copyright Footer -->
+            <div
+                class="w-full pt-12 border-t border-zinc-100 flex flex-col md:row justify-between items-center text-[10px] text-zinc-400 uppercase tracking-[0.15em]">
+                <div>The Real Influence House © 2026</div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
