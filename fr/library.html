@@ -175,83 +175,181 @@
                 </button>
             </div>
 
-            <!-- E-books Container -->
-            <div id="ebooks-container"
-                class="flex overflow-x-auto gap-6 pb-4 snap-x hide-scrollbar md:grid md:grid-cols-3 md:gap-12 md:overflow-visible transition-all duration-300">
-                <!-- Product 1 -->
-                <div class="min-w-[80vw] md:min-w-0 snap-center flex flex-col">
-                    <div class="bg-zinc-100 aspect-[3/4] mb-6 flex items-center justify-center text-zinc-300">
-                        <span class="uppercase tracking-widest text-xs">Image Produit</span>
-                    </div>
-                    <h4 class="text-lg font-medium mb-2">Le Blueprint de l'Influence</h4>
-                    <p class="text-zinc-500 text-xs mb-4">Un guide complet pour bâtir une marque personnelle durable.
-                    </p>
-                    <div class="mt-auto flex justify-between items-center">
-                        <span class="font-serif italic text-lg">$29.00</span>
-                        <button
-                            class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
-                            Maintenant</button>
-                    </div>
+            <!-- E-books Container Wrapper -->
+            <div class="relative group">
+                <!-- Arrows -->
+                <div
+                    class="arrow-navigation absolute top-1/2 -translate-y-1/2 w-full justify-between items-center px-4 z-10 flex pointer-events-none">
+                    <button onclick="scrollContainer('ebooks-container', 'left')"
+                        class="pointer-events-auto bg-white/90 p-3 rounded-full shadow-lg hover:bg-white transition-all transform hover:scale-110 opacity-0 group-hover:opacity-100 duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                        </svg>
+                    </button>
+                    <button onclick="scrollContainer('ebooks-container', 'right')"
+                        class="pointer-events-auto bg-white/90 p-3 rounded-full shadow-lg hover:bg-white transition-all transform hover:scale-110 opacity-0 group-hover:opacity-100 duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
                 </div>
 
-                <!-- Product 2 -->
-                <div class="min-w-[80vw] md:min-w-0 snap-center flex flex-col">
-                    <div class="bg-zinc-100 aspect-[3/4] mb-6 flex items-center justify-center text-zinc-300">
-                        <span class="uppercase tracking-widest text-xs">Image Produit</span>
+                <!-- E-books Container -->
+                <div id="ebooks-container"
+                    class="flex overflow-x-auto gap-6 pb-8 snap-x hide-scrollbar transition-all duration-300">
+                    <!-- Product 1 -->
+                    <div class="min-w-[80vw] md:min-w-[30%] snap-center flex flex-col">
+                        <div class="bg-zinc-100 aspect-[3/4] mb-6 flex items-center justify-center text-zinc-300">
+                            <span class="uppercase tracking-widest text-xs">Image Produit</span>
+                        </div>
+                        <h4 class="text-lg font-medium mb-2">Le Blueprint de l'Influence</h4>
+                        <p class="text-zinc-500 text-xs mb-4">Un guide complet pour bâtir une marque personnelle
+                            durable.</p>
+                        <div class="mt-auto flex justify-between items-center">
+                            <span class="font-serif italic text-lg">$29.00</span>
+                            <button
+                                class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
+                                Maintenant</button>
+                        </div>
                     </div>
-                    <h4 class="text-lg font-medium mb-2">Kit de Démarrage RP</h4>
-                    <p class="text-zinc-500 text-xs mb-4">Tout ce dont vous avez besoin pour vous présenter aux médias
-                        avec confiance.</p>
-                    <div class="mt-auto flex justify-between items-center">
-                        <span class="font-serif italic text-lg">$35.00</span>
-                        <button
-                            class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
-                            Maintenant</button>
-                    </div>
-                </div>
 
-                <!-- Product 3 -->
-                <div class="min-w-[80vw] md:min-w-0 snap-center flex flex-col">
-                    <div class="bg-zinc-100 aspect-[3/4] mb-6 flex items-center justify-center text-zinc-300">
-                        <span class="uppercase tracking-widest text-xs">Image Produit</span>
+                    <!-- Product 2 -->
+                    <div class="min-w-[80vw] md:min-w-[30%] snap-center flex flex-col">
+                        <div class="bg-zinc-100 aspect-[3/4] mb-6 flex items-center justify-center text-zinc-300">
+                            <span class="uppercase tracking-widest text-xs">Image Produit</span>
+                        </div>
+                        <h4 class="text-lg font-medium mb-2">Kit de Démarrage RP</h4>
+                        <p class="text-zinc-500 text-xs mb-4">Tout ce dont vous avez besoin pour vous présenter aux
+                            médias.</p>
+                        <div class="mt-auto flex justify-between items-center">
+                            <span class="font-serif italic text-lg">$35.00</span>
+                            <button
+                                class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
+                                Maintenant</button>
+                        </div>
                     </div>
-                    <h4 class="text-lg font-medium mb-2">Cahier de Stratégie de Contenu</h4>
-                    <p class="text-zinc-500 text-xs mb-4">Planifiez, créez et exécutez du contenu qui convertit.</p>
-                    <div class="mt-auto flex justify-between items-center">
-                        <span class="font-serif italic text-lg">$25.00</span>
-                        <button
-                            class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
-                            Maintenant</button>
-                    </div>
-                </div>
 
-                <!-- Product 4 -->
-                <div class="min-w-[80vw] md:min-w-0 snap-center flex flex-col">
-                    <div class="bg-zinc-100 aspect-[3/4] mb-6 flex items-center justify-center text-zinc-300">
-                        <span class="uppercase tracking-widest text-xs">Image Produit</span>
+                    <!-- Product 3 -->
+                    <div class="min-w-[80vw] md:min-w-[30%] snap-center flex flex-col">
+                        <div class="bg-zinc-100 aspect-[3/4] mb-6 flex items-center justify-center text-zinc-300">
+                            <span class="uppercase tracking-widest text-xs">Image Produit</span>
+                        </div>
+                        <h4 class="text-lg font-medium mb-2">Cahier de Stratégie de Contenu</h4>
+                        <p class="text-zinc-500 text-xs mb-4">Planifiez, créez et exécutez du contenu qui convertit.</p>
+                        <div class="mt-auto flex justify-between items-center">
+                            <span class="font-serif italic text-lg">$25.00</span>
+                            <button
+                                class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
+                                Maintenant</button>
+                        </div>
                     </div>
-                    <h4 class="text-lg font-medium mb-2">Guide des Archétypes de Marque</h4>
-                    <p class="text-zinc-500 text-xs mb-4">Découvrez la personnalité et la voix de votre marque.</p>
-                    <div class="mt-auto flex justify-between items-center">
-                        <span class="font-serif italic text-lg">$19.00</span>
-                        <button
-                            class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
-                            Maintenant</button>
-                    </div>
-                </div>
 
-                <!-- Product 5 -->
-                <div class="min-w-[80vw] md:min-w-0 snap-center flex flex-col">
-                    <div class="bg-zinc-100 aspect-[3/4] mb-6 flex items-center justify-center text-zinc-300">
-                        <span class="uppercase tracking-widest text-xs">Image Produit</span>
+                    <!-- Product 4 -->
+                    <div class="min-w-[80vw] md:min-w-[30%] snap-center flex flex-col">
+                        <div class="bg-zinc-100 aspect-[3/4] mb-6 flex items-center justify-center text-zinc-300">
+                            <span class="uppercase tracking-widest text-xs">Image Produit</span>
+                        </div>
+                        <h4 class="text-lg font-medium mb-2">Guide des Archétypes de Marque</h4>
+                        <p class="text-zinc-500 text-xs mb-4">Découvrez la personnalité et la voix de votre marque.</p>
+                        <div class="mt-auto flex justify-between items-center">
+                            <span class="font-serif italic text-lg">$19.00</span>
+                            <button
+                                class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
+                                Maintenant</button>
+                        </div>
                     </div>
-                    <h4 class="text-lg font-medium mb-2">Modèles de Pitch Média</h4>
-                    <p class="text-zinc-500 text-xs mb-4">Des modèles éprouvés pour faire entendre votre histoire.</p>
-                    <div class="mt-auto flex justify-between items-center">
-                        <span class="font-serif italic text-lg">$22.00</span>
-                        <button
-                            class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
-                            Maintenant</button>
+
+                    <!-- Product 5 -->
+                    <div class="min-w-[80vw] md:min-w-[30%] snap-center flex flex-col">
+                        <div class="bg-zinc-100 aspect-[3/4] mb-6 flex items-center justify-center text-zinc-300">
+                            <span class="uppercase tracking-widest text-xs">Image Produit</span>
+                        </div>
+                        <h4 class="text-lg font-medium mb-2">Modèles de Pitch Média</h4>
+                        <p class="text-zinc-500 text-xs mb-4">Des modèles éprouvés pour faire entendre votre histoire.
+                        </p>
+                        <div class="mt-auto flex justify-between items-center">
+                            <span class="font-serif italic text-lg">$22.00</span>
+                            <button
+                                class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
+                                Maintenant</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="min-w-[80vw] md:min-w-[30%] snap-center flex flex-col">
+                        <div class="bg-zinc-100 aspect-[3/4] mb-6 flex items-center justify-center text-zinc-300">
+                            <span class="uppercase tracking-widest text-xs">Image Produit</span>
+                        </div>
+                        <h4 class="text-lg font-medium mb-2">Guide de Croissance Instagram</h4>
+                        <p class="text-zinc-500 text-xs mb-4">Stratégies pour augmenter vos abonnés organiquement.</p>
+                        <div class="mt-auto flex justify-between items-center">
+                            <span class="font-serif italic text-lg">$27.00</span>
+                            <button
+                                class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
+                                Maintenant</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div class="min-w-[80vw] md:min-w-[30%] snap-center flex flex-col">
+                        <div class="bg-zinc-100 aspect-[3/4] mb-6 flex items-center justify-center text-zinc-300">
+                            <span class="uppercase tracking-widest text-xs">Image Produit</span>
+                        </div>
+                        <h4 class="text-lg font-medium mb-2">Guide d'Autorité LinkedIn</h4>
+                        <p class="text-zinc-500 text-xs mb-4">Optimiser votre profil pour un impact professionnel.</p>
+                        <div class="mt-auto flex justify-between items-center">
+                            <span class="font-serif italic text-lg">$32.00</span>
+                            <button
+                                class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
+                                Maintenant</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 -->
+                    <div class="min-w-[80vw] md:min-w-[30%] snap-center flex flex-col">
+                        <div class="bg-zinc-100 aspect-[3/4] mb-6 flex items-center justify-center text-zinc-300">
+                            <span class="uppercase tracking-widest text-xs">Image Produit</span>
+                        </div>
+                        <h4 class="text-lg font-medium mb-2">Scripts de Négociation</h4>
+                        <p class="text-zinc-500 text-xs mb-4">Quoi dire pour obtenir l'accord que vous méritez.</p>
+                        <div class="mt-auto flex justify-between items-center">
+                            <span class="font-serif italic text-lg">$45.00</span>
+                            <button
+                                class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
+                                Maintenant</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 9 -->
+                    <div class="min-w-[80vw] md:min-w-[30%] snap-center flex flex-col">
+                        <div class="bg-zinc-100 aspect-[3/4] mb-6 flex items-center justify-center text-zinc-300">
+                            <span class="uppercase tracking-widest text-xs">Image Produit</span>
+                        </div>
+                        <h4 class="text-lg font-medium mb-2">Modèles de Contenu Viral</h4>
+                        <p class="text-zinc-500 text-xs mb-4">Des structures éprouvées pour devenir viral.</p>
+                        <div class="mt-auto flex justify-between items-center">
+                            <span class="font-serif italic text-lg">$15.00</span>
+                            <button
+                                class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
+                                Maintenant</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 10 -->
+                    <div class="min-w-[80vw] md:min-w-[30%] snap-center flex flex-col">
+                        <div class="bg-zinc-100 aspect-[3/4] mb-6 flex items-center justify-center text-zinc-300">
+                            <span class="uppercase tracking-widest text-xs">Image Produit</span>
+                        </div>
+                        <h4 class="text-lg font-medium mb-2">Checklist de Marque Personnelle</h4>
+                        <p class="text-zinc-500 text-xs mb-4">Assurez-vous de n'avoir manqué aucun point de contact.</p>
+                        <div class="mt-auto flex justify-between items-center">
+                            <span class="font-serif italic text-lg">$9.99</span>
+                            <button
+                                class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
+                                Maintenant</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -272,72 +370,192 @@
                 </button>
             </div>
 
-            <!-- Masterclasses Container -->
-            <div id="masterclasses-container"
-                class="flex overflow-x-auto gap-6 pb-4 snap-x hide-scrollbar md:grid md:grid-cols-2 md:gap-12 md:overflow-visible transition-all duration-300">
-                <!-- Masterclass 1 -->
-                <div class="min-w-[85vw] md:min-w-0 snap-center flex flex-col">
-                    <div
-                        class="bg-white aspect-video mb-6 flex items-center justify-center text-zinc-300 border border-zinc-200">
-                        <span class="uppercase tracking-widest text-xs">Miniature Vidéo</span>
-                    </div>
-                    <h4 class="text-lg font-medium mb-2">Maîtriser Votre Marque Personnelle</h4>
-                    <p class="text-zinc-500 text-xs mb-4">Une plongée de 2 heures dans la définition et la projection de
-                        votre identité unique.</p>
-                    <div class="mt-auto flex justify-between items-center">
-                        <span class="font-serif italic text-lg">$99.00</span>
-                        <button
-                            class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
-                            Maintenant</button>
-                    </div>
+            <!-- Masterclasses Container Wrapper -->
+            <div class="relative group">
+                <!-- Arrows -->
+                <div
+                    class="arrow-navigation absolute top-1/2 -translate-y-1/2 w-full justify-between items-center px-4 z-10 flex pointer-events-none">
+                    <button onclick="scrollContainer('masterclasses-container', 'left')"
+                        class="pointer-events-auto bg-white/90 p-3 rounded-full shadow-lg hover:bg-white transition-all transform hover:scale-110 opacity-0 group-hover:opacity-100 duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                        </svg>
+                    </button>
+                    <button onclick="scrollContainer('masterclasses-container', 'right')"
+                        class="pointer-events-auto bg-white/90 p-3 rounded-full shadow-lg hover:bg-white transition-all transform hover:scale-110 opacity-0 group-hover:opacity-100 duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
                 </div>
 
-                <!-- Masterclass 2 -->
-                <div class="min-w-[85vw] md:min-w-0 snap-center flex flex-col">
-                    <div
-                        class="bg-white aspect-video mb-6 flex items-center justify-center text-zinc-300 border border-zinc-200">
-                        <span class="uppercase tracking-widest text-xs">Miniature Vidéo</span>
+                <!-- Masterclasses Container -->
+                <div id="masterclasses-container"
+                    class="flex overflow-x-auto gap-6 pb-8 snap-x hide-scrollbar transition-all duration-300">
+                    <!-- Masterclass 1 -->
+                    <div class="min-w-[85vw] md:min-w-[30%] snap-center flex flex-col">
+                        <div
+                            class="bg-white aspect-video mb-6 flex items-center justify-center text-zinc-300 border border-zinc-200">
+                            <span class="uppercase tracking-widest text-xs">Miniature Vidéo</span>
+                        </div>
+                        <h4 class="text-lg font-medium mb-2">Maîtriser Votre Marque Personnelle</h4>
+                        <p class="text-zinc-500 text-xs mb-4">Une plongée de 2 heures dans la définition et la
+                            projection de votre identité unique.</p>
+                        <div class="mt-auto flex justify-between items-center">
+                            <span class="font-serif italic text-lg">$99.00</span>
+                            <button
+                                class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
+                                Maintenant</button>
+                        </div>
                     </div>
-                    <h4 class="text-lg font-medium mb-2">De l'Influence à l'Opportunité</h4>
-                    <p class="text-zinc-500 text-xs mb-4">Apprenez à monétiser votre audience et à décrocher des
-                        contrats de marque.</p>
-                    <div class="mt-auto flex justify-between items-center">
-                        <span class="font-serif italic text-lg">$149.00</span>
-                        <button
-                            class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
-                            Maintenant</button>
-                    </div>
-                </div>
 
-                <!-- Masterclass 3 -->
-                <div class="min-w-[85vw] md:min-w-0 snap-center flex flex-col">
-                    <div
-                        class="bg-white aspect-video mb-6 flex items-center justify-center text-zinc-300 border border-zinc-200">
-                        <span class="uppercase tracking-widest text-xs">Miniature Vidéo</span>
+                    <!-- Masterclass 2 -->
+                    <div class="min-w-[85vw] md:min-w-[30%] snap-center flex flex-col">
+                        <div
+                            class="bg-white aspect-video mb-6 flex items-center justify-center text-zinc-300 border border-zinc-200">
+                            <span class="uppercase tracking-widest text-xs">Miniature Vidéo</span>
+                        </div>
+                        <h4 class="text-lg font-medium mb-2">De l'Influence à l'Opportunité</h4>
+                        <p class="text-zinc-500 text-xs mb-4">Apprenez à monétiser votre audience et à décrocher des
+                            contrats de marque.</p>
+                        <div class="mt-auto flex justify-between items-center">
+                            <span class="font-serif italic text-lg">$149.00</span>
+                            <button
+                                class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
+                                Maintenant</button>
+                        </div>
                     </div>
-                    <h4 class="text-lg font-medium mb-2">Gestion de Crise 101</h4>
-                    <p class="text-zinc-500 text-xs mb-4">Protéger votre réputation de marque à l'ère numérique.</p>
-                    <div class="mt-auto flex justify-between items-center">
-                        <span class="font-serif italic text-lg">$129.00</span>
-                        <button
-                            class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
-                            Maintenant</button>
-                    </div>
-                </div>
 
-                <!-- Masterclass 4 -->
-                <div class="min-w-[85vw] md:min-w-0 snap-center flex flex-col">
-                    <div
-                        class="bg-white aspect-video mb-6 flex items-center justify-center text-zinc-300 border border-zinc-200">
-                        <span class="uppercase tracking-widest text-xs">Miniature Vidéo</span>
+                    <!-- Masterclass 3 -->
+                    <div class="min-w-[85vw] md:min-w-[30%] snap-center flex flex-col">
+                        <div
+                            class="bg-white aspect-video mb-6 flex items-center justify-center text-zinc-300 border border-zinc-200">
+                            <span class="uppercase tracking-widest text-xs">Miniature Vidéo</span>
+                        </div>
+                        <h4 class="text-lg font-medium mb-2">Gestion de Crise 101</h4>
+                        <p class="text-zinc-500 text-xs mb-4">Protéger votre réputation de marque à l'ère numérique.</p>
+                        <div class="mt-auto flex justify-between items-center">
+                            <span class="font-serif italic text-lg">$129.00</span>
+                            <button
+                                class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
+                                Maintenant</button>
+                        </div>
                     </div>
-                    <h4 class="text-lg font-medium mb-2">Maîtrise de la Prise de Parole</h4>
-                    <p class="text-zinc-500 text-xs mb-4">Maîtrisez la scène et captivez n'importe quel public.</p>
-                    <div class="mt-auto flex justify-between items-center">
-                        <span class="font-serif italic text-lg">$199.00</span>
-                        <button
-                            class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
-                            Maintenant</button>
+
+                    <!-- Masterclass 4 -->
+                    <div class="min-w-[85vw] md:min-w-[30%] snap-center flex flex-col">
+                        <div
+                            class="bg-white aspect-video mb-6 flex items-center justify-center text-zinc-300 border border-zinc-200">
+                            <span class="uppercase tracking-widest text-xs">Miniature Vidéo</span>
+                        </div>
+                        <h4 class="text-lg font-medium mb-2">Maîtrise de la Prise de Parole</h4>
+                        <p class="text-zinc-500 text-xs mb-4">Maîtrisez la scène et captivez n'importe quel public.</p>
+                        <div class="mt-auto flex justify-between items-center">
+                            <span class="font-serif italic text-lg">$199.00</span>
+                            <button
+                                class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
+                                Maintenant</button>
+                        </div>
+                    </div>
+
+                    <!-- Masterclass 5 -->
+                    <div class="min-w-[85vw] md:min-w-[30%] snap-center flex flex-col">
+                        <div
+                            class="bg-white aspect-video mb-6 flex items-center justify-center text-zinc-300 border border-zinc-200">
+                            <span class="uppercase tracking-widest text-xs">Miniature Vidéo</span>
+                        </div>
+                        <h4 class="text-lg font-medium mb-2">Montage Vidéo pour Créateurs</h4>
+                        <p class="text-zinc-500 text-xs mb-4">Montez comme un pro avec juste votre smartphone.</p>
+                        <div class="mt-auto flex justify-between items-center">
+                            <span class="font-serif italic text-lg">$59.00</span>
+                            <button
+                                class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
+                                Maintenant</button>
+                        </div>
+                    </div>
+
+                    <!-- Masterclass 6 -->
+                    <div class="min-w-[85vw] md:min-w-[30%] snap-center flex flex-col">
+                        <div
+                            class="bg-white aspect-video mb-6 flex items-center justify-center text-zinc-300 border border-zinc-200">
+                            <span class="uppercase tracking-widest text-xs">Miniature Vidéo</span>
+                        </div>
+                        <h4 class="text-lg font-medium mb-2">Storytelling pour les Affaires</h4>
+                        <p class="text-zinc-500 text-xs mb-4">Créez des récits qui vendent vos produits.</p>
+                        <div class="mt-auto flex justify-between items-center">
+                            <span class="font-serif italic text-lg">$89.00</span>
+                            <button
+                                class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
+                                Maintenant</button>
+                        </div>
+                    </div>
+
+                    <!-- Masterclass 7 -->
+                    <div class="min-w-[85vw] md:min-w-[30%] snap-center flex flex-col">
+                        <div
+                            class="bg-white aspect-video mb-6 flex items-center justify-center text-zinc-300 border border-zinc-200">
+                            <span class="uppercase tracking-widest text-xs">Miniature Vidéo</span>
+                        </div>
+                        <h4 class="text-lg font-medium mb-2">SEO pour Influenceurs</h4>
+                        <p class="text-zinc-500 text-xs mb-4">Soyez trouvé sur Google et au-delà.</p>
+                        <div class="mt-auto flex justify-between items-center">
+                            <span class="font-serif italic text-lg">$119.00</span>
+                            <button
+                                class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
+                                Maintenant</button>
+                        </div>
+                    </div>
+
+                    <!-- Masterclass 8 -->
+                    <div class="min-w-[85vw] md:min-w-[30%] snap-center flex flex-col">
+                        <div
+                            class="bg-white aspect-video mb-6 flex items-center justify-center text-zinc-300 border border-zinc-200">
+                            <span class="uppercase tracking-widest text-xs">Miniature Vidéo</span>
+                        </div>
+                        <h4 class="text-lg font-medium mb-2">Construction de Communauté</h4>
+                        <p class="text-zinc-500 text-xs mb-4">Transformez vos abonnés en fans inconditionnels.</p>
+                        <div class="mt-auto flex justify-between items-center">
+                            <span class="font-serif italic text-lg">$79.00</span>
+                            <button
+                                class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
+                                Maintenant</button>
+                        </div>
+                    </div>
+
+                    <!-- Masterclass 9 -->
+                    <div class="min-w-[85vw] md:min-w-[30%] snap-center flex flex-col">
+                        <div
+                            class="bg-white aspect-video mb-6 flex items-center justify-center text-zinc-300 border border-zinc-200">
+                            <span class="uppercase tracking-widest text-xs">Miniature Vidéo</span>
+                        </div>
+                        <h4 class="text-lg font-medium mb-2">Magie de l'Email Marketing</h4>
+                        <p class="text-zinc-500 text-xs mb-4">Possédez votre audience avec une newsletter engageante.
+                        </p>
+                        <div class="mt-auto flex justify-between items-center">
+                            <span class="font-serif italic text-lg">$69.00</span>
+                            <button
+                                class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
+                                Maintenant</button>
+                        </div>
+                    </div>
+
+                    <!-- Masterclass 10 -->
+                    <div class="min-w-[85vw] md:min-w-[30%] snap-center flex flex-col">
+                        <div
+                            class="bg-white aspect-video mb-6 flex items-center justify-center text-zinc-300 border border-zinc-200">
+                            <span class="uppercase tracking-widest text-xs">Miniature Vidéo</span>
+                        </div>
+                        <h4 class="text-lg font-medium mb-2">Secrets de Collaboration</h4>
+                        <p class="text-zinc-500 text-xs mb-4">Comment s'associer efficacement avec d'autres créateurs.
+                        </p>
+                        <div class="mt-auto flex justify-between items-center">
+                            <span class="font-serif italic text-lg">$49.00</span>
+                            <button
+                                class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-black pb-1 hover:opacity-50 transition-opacity">Acheter
+                                Maintenant</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -347,34 +565,53 @@
     <script>
         function toggleView(containerId, button) {
             const container = document.getElementById(containerId);
+            const section = container.closest('section');
+            const arrowContainer = section.querySelector('.arrow-navigation');
 
             // Toggle classes between flex (carousel) and grid
             if (container.classList.contains('flex')) {
                 // Switch to Grid (Show All)
-                container.classList.remove('flex', 'overflow-x-auto', 'snap-x', 'hide-scrollbar');
-                container.classList.add('grid', 'grid-cols-1', 'gap-y-12');
+                container.classList.remove('flex', 'overflow-x-auto', 'snap-x', 'hide-scrollbar', 'whitespace-nowrap');
+                container.classList.add('grid', 'grid-cols-1', 'md:grid-cols-3', 'gap-y-12');
+
+                // Hide arrows
+                if (arrowContainer) arrowContainer.classList.add('hidden');
 
                 // Remove width constraints from children for grid view
                 const children = container.children;
                 for (let child of children) {
-                    child.classList.remove('min-w-[80vw]', 'min-w-[85vw]', 'snap-center');
+                    child.classList.remove('min-w-[80vw]', 'md:min-w-[30%]', 'snap-center');
                 }
 
                 button.textContent = "Voir Moins";
             } else {
                 // Switch back to Carousel
-                container.classList.remove('grid', 'grid-cols-1', 'gap-y-12');
+                container.classList.remove('grid', 'grid-cols-1', 'md:grid-cols-3', 'gap-y-12');
                 container.classList.add('flex', 'overflow-x-auto', 'snap-x', 'hide-scrollbar');
+
+                // Show arrows
+                if (arrowContainer) arrowContainer.classList.remove('hidden');
 
                 // Add width constraints back
                 const children = container.children;
-                const minWidth = containerId === 'ebooks-container' ? 'min-w-[80vw]' : 'min-w-[85vw]';
+                // Ebooks and masterclasses share same width logic now
                 for (let child of children) {
-                    child.classList.add(minWidth, 'snap-center');
+                    child.classList.add('min-w-[80vw]', 'md:min-w-[30%]', 'snap-center');
                 }
 
                 button.textContent = "Voir Tout";
             }
+        }
+
+        function scrollContainer(containerId, direction) {
+            const container = document.getElementById(containerId);
+            // Scroll by width of one item approximately
+            const scrollAmount = window.innerWidth < 768 ? window.innerWidth * 0.8 : container.clientWidth / 3;
+
+            container.scrollBy({
+                left: direction === 'left' ? -scrollAmount : scrollAmount,
+                behavior: 'smooth'
+            });
         }
     </script>
 
