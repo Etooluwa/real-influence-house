@@ -197,7 +197,8 @@
             <div
                 class="service-panel sticky top-0 h-screen w-full flex flex-col md:flex-row border-t border-zinc-100 z-20 overflow-hidden shadow-[0_-20px_50px_rgba(0,0,0,0.05)] bg-[#F9F7F2]">
                 <div class="w-full md:w-1/2 h-1/2 md:h-full overflow-hidden bg-zinc-50">
-                    <img src="../assets/images/img7.JPG" alt="apprentissage numérique" class="w-full h-full object-cover">
+                    <img src="../assets/images/img7.JPG" alt="apprentissage numérique"
+                        class="w-full h-full object-cover">
                 </div>
                 <div class="w-full md:w-1/2 h-1/2 md:h-full flex flex-col justify-center px-10 md:px-24">
                     <h3 class="text-3xl md:text-5xl font-light mb-8">
@@ -274,6 +275,43 @@
                     <p id="conf-status" class="mt-4 text-xs tracking-widest text-center hidden"></p>
                 </div>
             </form>
+        </div>
+    </div>
+
+    <!-- Welcome Discount Popup -->
+    <div id="welcome-popup" class="fixed inset-0 bg-black/50 z-50 hidden items-center justify-center p-6">
+        <div class="bg-white rounded-2xl max-w-md w-full p-10 relative shadow-2xl">
+            <button onclick="closeWelcomePopup()"
+                class="absolute top-4 right-4 text-zinc-400 hover:text-black transition-colors text-2xl">&times;</button>
+            <div class="text-center mb-6">
+                <span class="text-[10px] uppercase tracking-[0.3em] text-zinc-400">Offre Exclusive</span>
+            </div>
+            <h3 class="text-2xl md:text-3xl font-light mb-4 text-center">
+                Obtenez <span class="font-serif italic" style="font-family: 'Playfair Display', serif;">10% de
+                    Réduction</span>
+            </h3>
+            <p class="text-zinc-500 text-sm mb-8 text-center">Inscrivez-vous pour recevoir 10% de réduction sur votre
+                premier achat d'Apprentissage Numérique et restez informé du contenu exclusif.</p>
+            <form id="welcome-form" class="space-y-6">
+                <div>
+                    <label class="text-[10px] text-zinc-400 uppercase tracking-widest block mb-2">Nom Complet</label>
+                    <input type="text" name="fullName" id="welcome-name" required placeholder="Votre nom"
+                        class="w-full border-b border-zinc-200 py-3 text-sm focus:outline-none focus:border-black transition-colors bg-transparent">
+                </div>
+                <div>
+                    <label class="text-[10px] text-zinc-400 uppercase tracking-widest block mb-2">Adresse Email</label>
+                    <input type="email" name="email" id="welcome-email" required placeholder="votre@email.com"
+                        class="w-full border-b border-zinc-200 py-3 text-sm focus:outline-none focus:border-black transition-colors bg-transparent">
+                </div>
+                <div class="pt-4">
+                    <button type="submit" id="welcome-submit-btn"
+                        class="w-full bg-black text-white py-4 rounded-full text-[11px] font-semibold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+                        Obtenir Mes 10% de Réduction
+                    </button>
+                    <p id="welcome-status" class="mt-4 text-xs tracking-widest text-center hidden"></p>
+                </div>
+            </form>
+            <p class="text-[10px] text-zinc-400 text-center mt-6">Pas de spam. Désabonnez-vous à tout moment.</p>
         </div>
     </div>
 
@@ -462,6 +500,84 @@
                     statusMsg.classList.remove('hidden');
                     this.reset();
                     setTimeout(() => closeConferenceModal(), 3000);
+                } else {
+                    throw new Error(result.error || 'Échec de l\'envoi');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                statusMsg.innerText = 'ERREUR. VEUILLEZ RÉESSAYER.';
+                statusMsg.classList.add('text-red-500');
+                statusMsg.classList.remove('hidden');
+            } finally {
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Welcome Popup Functions
+        function openWelcomePopup() {
+            const popup = document.getElementById('welcome-popup');
+            popup.classList.remove('hidden');
+            popup.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeWelcomePopup() {
+            const popup = document.getElementById('welcome-popup');
+            popup.classList.add('hidden');
+            popup.classList.remove('flex');
+            document.body.style.overflow = '';
+            localStorage.setItem('welcomePopupSeen', 'true');
+        }
+
+        document.getElementById('welcome-popup').addEventListener('click', function (e) {
+            if (e.target === this) closeWelcomePopup();
+        });
+
+        window.addEventListener('load', function () {
+            if (!localStorage.getItem('welcomePopupSeen')) {
+                setTimeout(() => {
+                    openWelcomePopup();
+                }, 2000);
+            }
+        });
+
+        document.getElementById('welcome-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('welcome-submit-btn');
+            const statusMsg = document.getElementById('welcome-status');
+            const originalBtnText = submitBtn.innerText;
+
+            submitBtn.innerText = 'ENVOI...';
+            submitBtn.disabled = true;
+            statusMsg.classList.add('hidden');
+            statusMsg.classList.remove('text-red-500', 'text-green-500');
+
+            const fullName = document.getElementById('welcome-name').value;
+            const email = document.getElementById('welcome-email').value;
+
+            try {
+                const isLocal = window.location.hostname === 'localhost' ||
+                    window.location.hostname === '127.0.0.1' ||
+                    window.location.protocol === 'file:';
+                const apiUrl = isLocal ? 'http://localhost:3000/api/discount-signup' : '/api/discount-signup';
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ fullName, email })
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    statusMsg.innerText = "SUCCÈS ! VÉRIFIEZ VOTRE EMAIL POUR VOTRE CODE DE RÉDUCTION.";
+                    statusMsg.classList.add('text-green-500');
+                    statusMsg.classList.remove('hidden');
+                    this.reset();
+                    localStorage.setItem('welcomePopupSeen', 'true');
+                    setTimeout(() => closeWelcomePopup(), 3000);
                 } else {
                     throw new Error(result.error || 'Échec de l\'envoi');
                 }
