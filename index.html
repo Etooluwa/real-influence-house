@@ -351,6 +351,27 @@
         </div>
     </div>
 
+    <!-- Minimized Popup -->
+    <div id="minimized-popup"
+        class="fixed bottom-4 left-4 z-50 hidden bg-white rounded-lg shadow-xl border border-zinc-100 p-4 transition-all duration-300 hover:scale-105 cursor-pointer flex items-center gap-4 max-w-xs group"
+        onclick="maximizePopup()">
+        <div class="bg-black text-white w-10 h-10 rounded-full flex items-center justify-center shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+            </svg>
+        </div>
+        <div>
+            <p class="text-[10px] uppercase tracking-widest font-semibold mb-1">Stay Updated</p>
+            <p class="text-xs text-zinc-500">Get the latest news & updates</p>
+        </div>
+        <button onclick="event.stopPropagation(); closeMinimizedPopup()"
+            class="text-zinc-400 hover:text-black transition-colors ml-2 opacity-0 group-hover:opacity-100">
+            &times;
+        </button>
+    </div>
+
     <!-- Recent Projects Section -->
     <section id="portfolio" class="pt-20 md:pt-32 pb-8 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 mb-16 text-center">
@@ -586,19 +607,62 @@
         });
 
         // Welcome Popup Functions
+        // Welcome Popup Functions
         function openWelcomePopup() {
             const popup = document.getElementById('welcome-popup');
+            const minimized = document.getElementById('minimized-popup');
+
+            // Check if user has already subscribed or permanently dismissed
+            if (localStorage.getItem('newsletterSubscribed')) return;
+
+            // If user has seen it before but not subscribed, show minimized version
+            if (localStorage.getItem('welcomePopupSeen')) {
+                minimized.classList.remove('hidden');
+                minimized.classList.add('flex');
+            } else {
+                // First time visit: show full popup
+                popup.classList.remove('hidden');
+                popup.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeWelcomePopup() {
+            const popup = document.getElementById('welcome-popup');
+            const minimized = document.getElementById('minimized-popup');
+
+            // Hide full popup
+            popup.classList.add('hidden');
+            popup.classList.remove('flex');
+            document.body.style.overflow = '';
+
+            // Show minimized version
+            minimized.classList.remove('hidden');
+            minimized.classList.add('flex');
+
+            // Mark as seen
+            localStorage.setItem('welcomePopupSeen', 'true');
+        }
+
+        function maximizePopup() {
+            const popup = document.getElementById('welcome-popup');
+            const minimized = document.getElementById('minimized-popup');
+
+            // Hide minimized version
+            minimized.classList.add('hidden');
+            minimized.classList.remove('flex');
+
+            // Show full popup
             popup.classList.remove('hidden');
             popup.classList.add('flex');
             document.body.style.overflow = 'hidden';
         }
 
-        function closeWelcomePopup() {
-            const popup = document.getElementById('welcome-popup');
-            popup.classList.add('hidden');
-            popup.classList.remove('flex');
-            document.body.style.overflow = '';
-            localStorage.setItem('welcomePopupSeen', 'true');
+        function closeMinimizedPopup() {
+            const minimized = document.getElementById('minimized-popup');
+            minimized.classList.add('hidden');
+            minimized.classList.remove('flex');
+            localStorage.setItem('newsletterSubscribed', 'true'); // Permanently dismiss
         }
 
         // Close popup when clicking outside
