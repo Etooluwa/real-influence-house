@@ -600,8 +600,16 @@
             if (e.target === this) closeWelcomePopup();
         });
 
+        // Show popup logic on load
         window.addEventListener('load', function () {
-            if (!localStorage.getItem('welcomePopupSeen')) {
+            // If user has already subscribed or permanently dismissed, do nothing
+            if (localStorage.getItem('newsletterSubscribed')) return;
+
+            if (localStorage.getItem('welcomePopupSeen')) {
+                // If seen before, show minimized version immediately
+                openWelcomePopup();
+            } else {
+                // First time: wait 2 seconds then show full popup
                 setTimeout(() => {
                     openWelcomePopup();
                 }, 2000);
