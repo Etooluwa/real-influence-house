@@ -39,6 +39,23 @@ export async function onRequestPost(context) {
             })
         });
 
+        // ConvertKit Subscription (Best Effort)
+        if (env.CONVERTKIT_API_KEY && env.CONVERTKIT_FORM_ID) {
+            try {
+                await fetch(`https://api.convertkit.com/v3/forms/${env.CONVERTKIT_FORM_ID}/subscribe`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+                    body: JSON.stringify({
+                        api_key: env.CONVERTKIT_API_KEY,
+                        email: email,
+                        first_name: fullName
+                    })
+                });
+            } catch (ckError) {
+                console.error('ConvertKit subscription failed:', ckError);
+            }
+        }
+
         const data = await resendResponse.json();
 
         if (!resendResponse.ok) {
