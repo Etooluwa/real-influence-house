@@ -324,7 +324,9 @@
     <script>
         function toggleAccordion(button) {
             const content = button.nextElementSibling;
-            const icon = button.querySelector('span:last-child');
+            // Use lastElementChild to target the direct child (+) span,
+            // avoiding nested spans inside which are also last-children of their container
+            const icon = button.lastElementChild;
 
             if (content.classList.contains('hidden')) {
                 content.classList.remove('hidden');
