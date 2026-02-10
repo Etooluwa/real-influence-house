@@ -11,41 +11,38 @@ export async function onRequestPost(context) {
             });
         }
 
-        // Send notification email to the business
-        const emailContent = `
-New Discount Signup for Digital Learning!
+        // ConvertKit API Configuration
+        const formId = env.CONVERTKIT_FORM_ID;
+        const apiKey = env.CONVERTKIT_API_KEY;
 
-Name: ${fullName}
-Email: ${email}
-Signup Time: ${new Date().toISOString()}
+        if (!formId || !apiKey) {
+            console.error('ConvertKit configuration missing: CONVERTKIT_FORM_ID or CONVERTKIT_API_KEY not set.');
+            throw new Error('Server configuration error');
+        }
 
-This person signed up for the 10% off Digital Learning discount.
-        `.trim();
-
-        // Send via Resend
-        const resendResponse = await fetch('https://api.resend.com/emails', {
+        // Subscribe to ConvertKit Form
+        const convertKitResponse = await fetch(`https://api.convertkit.com/v3/forms/${formId}/subscribe`, {
             method: 'POST',
             headers: {
-                'Authorization': `Bearer ${env.RESEND_API_KEY}`,
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json; charset=utf-8'
             },
             body: JSON.stringify({
-                from: 'The Real Influence House <notifications@realinfluencehouse.com>',
-                to: ['hello@realinfluencehouse.com'],
-                subject: `New Discount Signup: ${fullName}`,
-                text: emailContent
+                api_key: apiKey,
+                email: email,
+                first_name: fullName
             })
         });
 
-        if (!resendResponse.ok) {
-            const errorData = await resendResponse.json();
-            console.error('Resend API error:', errorData);
-            throw new Error('Failed to send notification email');
+        const data = await convertKitResponse.json();
+
+        if (!convertKitResponse.ok) {
+            console.error('ConvertKit API error:', data);
+            throw new Error('Failed to subscribe to ConvertKit');
         }
 
         return new Response(JSON.stringify({
             success: true,
-            message: 'Signup successful! Check your email for the discount code.'
+            message: 'Signup successful! Please check your email to confirm your subscription.'
         }), {
             status: 200,
             headers: { 'Content-Type': 'application/json' }
