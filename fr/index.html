@@ -281,20 +281,19 @@
         </div>
     </div>
 
-    <!-- Welcome Discount Popup -->
+    <!-- Welcome Newsletter Popup -->
     <div id="welcome-popup" class="fixed inset-0 bg-black/50 z-50 hidden items-center justify-center p-6">
         <div class="bg-white rounded-2xl max-w-md w-full p-10 relative shadow-2xl">
             <button onclick="closeWelcomePopup()"
                 class="absolute top-4 right-4 text-zinc-400 hover:text-black transition-colors text-2xl">&times;</button>
             <div class="text-center mb-6">
-                <span class="text-[10px] uppercase tracking-[0.3em] text-zinc-400">Offre Exclusive</span>
+                <span class="text-[10px] uppercase tracking-[0.3em] text-zinc-400">Newsletter</span>
             </div>
             <h3 class="text-2xl md:text-3xl font-light mb-4 text-center">
-                Obtenez <span class="font-serif italic" style="font-family: 'Playfair Display', serif;">10% de
-                    Réduction</span>
+                Restez <span class="font-serif italic" style="font-family: 'Playfair Display', serif;">Informé</span>
             </h3>
-            <p class="text-zinc-500 text-sm mb-8 text-center">Inscrivez-vous pour recevoir 10% de réduction sur votre
-                premier achat d'Apprentissage Numérique et restez informé du contenu exclusif.</p>
+            <p class="text-zinc-500 text-sm mb-8 text-center">Inscrivez-vous pour recevoir les dernières nouvelles,
+                mises à jour et contenus exclusifs directement dans votre boîte de réception.</p>
             <form id="welcome-form" class="space-y-6">
                 <div>
                     <label class="text-[10px] text-zinc-400 uppercase tracking-widest block mb-2">Nom Complet</label>
@@ -309,7 +308,7 @@
                 <div class="pt-4">
                     <button type="submit" id="welcome-submit-btn"
                         class="w-full bg-black text-white py-4 rounded-full text-[11px] font-semibold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed">
-                        Obtenir Mes 10% de Réduction
+                        S'abonner
                     </button>
                     <p id="welcome-status" class="mt-4 text-xs tracking-widest text-center hidden"></p>
                 </div>
@@ -564,7 +563,7 @@
                 const isLocal = window.location.hostname === 'localhost' ||
                     window.location.hostname === '127.0.0.1' ||
                     window.location.protocol === 'file:';
-                const apiUrl = isLocal ? 'http://localhost:3000/api/discount-signup' : '/api/discount-signup';
+                const apiUrl = isLocal ? 'http://localhost:3000/api/subscribe' : '/api/subscribe';
 
                 const response = await fetch(apiUrl, {
                     method: 'POST',
@@ -575,7 +574,7 @@
                 const result = await response.json();
 
                 if (response.ok) {
-                    statusMsg.innerText = "SUCCÈS ! VÉRIFIEZ VOTRE EMAIL POUR VOTRE CODE DE RÉDUCTION.";
+                    statusMsg.innerText = "SUCCÈS ! VOUS ÊTES MAINTENANT INSCRIT.";
                     statusMsg.classList.add('text-green-500');
                     statusMsg.classList.remove('hidden');
                     this.reset();
